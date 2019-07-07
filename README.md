@@ -1,29 +1,15 @@
-# pspa
+# personal-blog
 
-## Project setup
-```
-npm install
-```
+## 项目目录
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+|--config              webpack配置文件
+|--src
+   ├─api               服务器接口
+   ├─assets            静态文件资源
+   │  ├─fonts
+   │  └─img
+   ├─components
+   │  └─childrens
+   ├─router             路由控制逻辑
+   └─store              vue-x存储
+       └─modulesh
