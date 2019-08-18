@@ -56,7 +56,7 @@
   </transition-group>
 </template>
 
-  <script>
+<script>
 export default {
   name: "index",
 
@@ -73,7 +73,7 @@ export default {
     this.$axios.get("./archives").then(function(e) {
       that.articles = e.data.docs;
       that.$store.commit("postPage", parseInt(e.data.docs[0].totalPage));
-      that.$store.commit("toggleLoding");
+      that.$store.commit("toggleLoading");
     });
   },
   destroyed() {
@@ -82,7 +82,7 @@ export default {
 };
 </script>
 
-<style lang='less' scoped>
+<style lang="less" scoped>
 .slide-in-enter-active {
   transition: all 0.3s ease;
 }
@@ -163,4 +163,3 @@ export default {
   }
 }
 </style>
-

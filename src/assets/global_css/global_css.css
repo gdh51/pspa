@@ -278,6 +278,30 @@ h6 {
   font-weight: 700;
 }
 
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: .9rem;
+}
+
+h5 {
+  font-size: .9rem;
+}
+
+h6 {
+  font-size: .9rem;
+}
+
 /* 选择区样式控制 */
 ::selection {
   color: #fff;

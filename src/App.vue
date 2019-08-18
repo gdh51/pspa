@@ -21,17 +21,16 @@
     <container></container>
     <!-- 容器 -->
     <footer-con :view='view'></footer-con>
-    <loding></loding>
+    <loading-mask></loading-mask>
   </div>
 </template>
 
 <script>
-import leftSide from "./components/leftSide.vue";
-import headerNav from "./components/headerNav.vue";
-import footerCon from "./components/footerCon.vue";
-import backCanvas from "./components/backCanvas.vue";
+import leftSide from "./components/left_side/index.vue";
+import headerNav from "./components/header_nav.vue";
+import footerCon from "./components/footer_con.vue";
+import backCanvas from "./components/back_canvas.vue";
 import container from "./components/container.vue";
-import loding from "./components/loding.vue";
 
 export default {
   name: "app",
@@ -41,8 +40,7 @@ export default {
     headerNav,
     footerCon,
     backCanvas,
-    container,
-    loding
+    container
   },
   data() {
     return {
@@ -78,7 +76,7 @@ export default {
   },
 
   created() {
-    this.$store.commit("toggleLoding");
+    this.$store.commit("toggleLoading");
     let that = this;
     this.$axios.get("./infototals").then(function(e) {
       that.sideData.tags = e.data.docs.tags;

@@ -34,7 +34,7 @@ export default {
     let that=this,params=this.$route.params;
     this.$axios.get("./"+params.tag+"/"+params.name+"").then(function(e){
       that.fetchInfo=e.data.docs[0];
-      that.$store.commit('toggleLoding');
+      that.$store.commit('toggleLoading');
     });
   },
   destroyed() {

@@ -8,7 +8,7 @@
     </transition>
     <transition name='change-tab' mode='out-in' appear>
       <section class='side-info' v-if="changeButton" key='side-info'>
-        <img class='myphoto' src='../assets/img/photo.jpg'/>
+        <img class='myphoto' src='../../assets/img/photo.jpg'/>
         <p>Lazybones</p>
         <p>Move on</p>
         <a href='https://github.com/gdh51' class='info-git'>Git Me</a>
@@ -25,14 +25,21 @@
         </address>
       </section>
       <section class='article-info' v-else key='article-info'>
+        <article-nav></article-nav>
       </section>
     </transition>
   </aside>
 </template>
 
 <script>
+import articleNav from './article/articleNav';
+
 export default {
-  name:'left-side',
+  name:'leftSide',
+
+  components: {
+    articleNav
+  },
 
   props:{
     show: {
@@ -116,6 +123,7 @@ export default {
   height: 100%;
   transform: translateX(300px);
   box-shadow: -0.25rem 0 0.25rem rgb(223, 207, 175) inset;
+  overflow: scroll;
 
   /* 切换区域 */
   .toggle-info {

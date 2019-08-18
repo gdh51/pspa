@@ -3,6 +3,8 @@
 </template>
 
 <script>
+
+// 分割线
 export default {
   name: 'polo-hr'
 }
@@ -34,7 +36,7 @@ hr::before {
   content: '';
   width: 30px;
   height: 30px;
-  background: url('../../assets/img/polo.gif');
+  background: url('../../../assets/img/polo.gif');
   background-size: cover;
   -webkit-transition: all 1s ease-in-out;
   -moz-transition: all 1s ease-in-out;

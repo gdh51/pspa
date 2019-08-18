@@ -23,7 +23,7 @@ export default {
     let that=this;
     this.$axios.get('./tags').then(function(e){
       that.tags=e.data.docs;
-      that.$store.commit('toggleLoding');
+      that.$store.commit('toggleLoading');
     });
   },
 }

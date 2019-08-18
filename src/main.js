@@ -10,6 +10,8 @@ import '../mock/api';
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
+
+// 注册全局组件
 Vue.use(common);
 Vue.config.productionTip = false;
 Vue.prototype.$axios = axios;
@@ -83,7 +85,7 @@ const vm = new Vue({
 }).$mount('#app');
 
 router.beforeEach((to, from, next) => {
-  vm.$store.commit('toggleLoding');
+  vm.$store.commit('toggleLoading');
   next();
 });
 //处理不同尺寸下的窗口大小

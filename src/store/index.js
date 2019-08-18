@@ -10,7 +10,7 @@ const store=new Vuex.Store({
     isInArticle:false,//是否处于文章中
     isShowPagebar:false,//是否显示页码条
     totalPage:1,
-    isLoding: false
+    isLoading: false
   },
   mutations:{
     toggleMenu(state){
@@ -31,8 +31,8 @@ const store=new Vuex.Store({
     postPage(state,page){
       state.totalPage=page;
     },
-    toggleLoding(state){
-      state.isLoding=!state.isLoding;
+    toggleLoading(state){
+      state.isLoading=!state.isLoading;
     }
   },
   modules:{

@@ -46,7 +46,7 @@ export default {
       console.log(e.data.docs);
       that.archives = e.data.docs;
       that.$store.commit("postPage", parseInt(e.data.docs[0].totalPage));
-      that.$store.commit("toggleLoding");
+      that.$store.commit("toggleLoading");
     });
   },
   destroyed() {

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import pageManage from './childrens/pageManage.vue';
+import pageManage from './childrens/page_manage.vue';
 export default {
   name:'container',
   components:{
