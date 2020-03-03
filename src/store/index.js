@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import sideBar from './modules/sideBar.js';
+import sideBar from './modules/side-bar/index.js';
 
 Vue.use(Vuex);
 
