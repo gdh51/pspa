@@ -42,7 +42,6 @@ export default {
       .get("./article?title=" + this.$route.query.title + "")
       .then(function(e) {
         that.docs = e.data.docs;
-        that.$store.commit("toggleLoading");
       });
   },
   destroyed() {

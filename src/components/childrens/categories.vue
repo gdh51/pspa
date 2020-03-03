@@ -38,7 +38,6 @@ export default {
     this.$axios.get('./categories').then(function(e){
       that.categories=e.data.docs;
       that.$store.commit('postPage',parseInt(e.data.docs[0].totalPage));
-      that.$store.commit('toggleLoading');
     });
   },
   destroyed() {

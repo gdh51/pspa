@@ -6,44 +6,44 @@ import categories from '../components/childrens/categories.vue';
 import tags from '../components/childrens/tags.vue';
 import specific from '../components/childrens/specific.vue';
 
-const route = [{
-    path: '/about',
-    name: 'about',
-    component: aboutMe
-  },
-  {
-    path: '/',
-    name: 'index',
-    component: index
-  },
-  {
-    path: '/archives',
-    name: 'archives',
-    component: archives
-  },
-  {
-    path: '/categories',
-    name: 'categories',
-    component: categories
-  },
-  {
-    path: '/tags',
-    name: 'tag',
-    component: tags,
-  },
-  {
-    path: '/article',
-    component: arTemp
-  },
-  {
-    path:'/:tag/:name',
-    name: 'specific',
-    component: specific,
-  },
-  {
-    path:'*',
-    component:index
-  }
+const routes = [{
+        path: '/about',
+        name: 'about',
+        component: aboutMe
+    },
+    {
+        path: '/',
+        name: 'index',
+        component: index
+    },
+    {
+        path: '/archives',
+        name: 'archives',
+        component: archives
+    },
+    {
+        path: '/categories',
+        name: 'categories',
+        component: categories
+    },
+    {
+        path: '/tags',
+        name: 'tag',
+        component: tags,
+    },
+    {
+        path: '/article',
+        component: arTemp
+    },
+    {
+        path: '/:tag/:name',
+        name: 'specific',
+        component: specific,
+    },
+    {
+        path: '*',
+        component: index
+    }
 ];
 
-export default route;
+export default routes;

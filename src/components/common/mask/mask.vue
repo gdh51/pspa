@@ -1,7 +1,7 @@
 <template>
   <div
     class='box'
-    v-show='this.$store.state.isLoading'
+    v-show='this.$store.state.showWrapper'
   >
     <div class='loading'>
       <div class='rect1'></div>

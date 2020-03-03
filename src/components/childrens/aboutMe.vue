@@ -51,7 +51,6 @@ export default {
   name: "aboutMe",
   created() {
     this.$store.commit("togglePagebar");
-    this.$store.commit("toggleLoading");
   },
   destroyed() {
     this.$store.commit("togglePagebar");
