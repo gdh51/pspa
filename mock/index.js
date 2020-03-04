@@ -1,30 +1,40 @@
-const PATH = require('path');
-const fs = require('fs');
+const {
+    searchMockData,
+    isRestful,
+    watchMockChange
+} = require('./util/index');
 
-function mockMiddleware(req, res, next) {
-    let accept = req.headers.accept;
+function mockMiddleware() {
 
-    if (!acceptsHtml(accept)) {
-        if (isRestful(req.path)) {
-            searchMockData(req.path, req.method).then(file => {
+    // 监听接口文件的变动，随时更新
+    watchMockChange();
+    return function (req, res, next) {
+        let accept = req.headers.accept;
 
-                // 返回该数据
-                res.header("Content-Type", "application/json; charset=utf-8")
-                res.end(file);
-            }).catch(() => next());
-            return;
+        if (!acceptsHtml(accept)) {
+            if (isRestful(req.path)) {
+                searchMockData(req.path, req.method).then(data => {
+                    if (!data) return next();
+
+                    // 返回该数据
+                    res.header({
+                        "Content-Type": "application/json; charset=utf-8",
+                        "X-Mock": "proxy"
+                    });
+                    res.json(data(req));
+                }).catch(() => next());
+                return;
+            }
+
+            // 未匹配mock数据或者不是restful api发起真实请求
+            return next();
         }
 
-        // 未匹配mock数据或者不是restful api发起真实请求
-        return next();
+        // 重定向
+        req.url = '/index.html';
+        next();
     }
-
-    // 重定向
-    req.url = '/index.html';
-    next();
 }
-
-const cached = {};
 
 function acceptsHtml(header) {
     let htmlAcceptHeaders = 'text/html';
@@ -34,31 +44,4 @@ function acceptsHtml(header) {
     return false;
 }
 
-function searchMockData(path, method) {
-
-    return new Promise((resolve, rejcet) => {
-        if (cached[path]) {
-            resolve(cached[path]);
-        } else {
-            fs.readFile(PATH.join(__dirname, `/api${path}/${method}.json`), 'utf-8', function (err, file) {
-
-                // 未找到文件则请求真实请求
-                if (err) {
-                    return rejcet(err);
-                }
-
-                cached[path] = file;
-
-                resolve(file);
-            });
-        }
-    });
-}
-
-const RESTFUL_RE = /^(\/\w*)*$/
-
-function isRestful(url) {
-    return RESTFUL_RE.test(url);
-}
-
-module.exports = mockMiddleware
+module.exports = mockMiddleware;

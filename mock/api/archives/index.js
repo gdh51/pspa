@@ -1,6 +1,8 @@
-{
-    "docs": [
-        {
+const sw = require('path');
+
+module.exports.get = function () {
+    return sw && ({
+        "docs": [{
             "totalPage": 1,
             "time": "2018-8",
             "title": "asdasd",
@@ -13,12 +15,10 @@
                 "name": "Vue",
                 "path": "have"
             },
-            "tags": [
-                {
-                    "tag": "Vue",
-                    "path": "none"
-                }
-            ]
-        }
-    ]
+            "tags": [{
+                "tag": "Vue",
+                "path": "none"
+            }]
+        }]
+    });
 }
