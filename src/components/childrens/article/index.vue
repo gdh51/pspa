@@ -6,10 +6,10 @@
         </div>
         <div
             class='ar-tags'
-            v-for="tag in docs.tags"
-            :key='tag.path'
+            v-for="tag in article.tags"
+            :key='tag.title'
         >
-            <router-link :to='tag.path'>{{tag.tag}}</router-link>
+            <router-link :to='tag.title'>{{ tag.title }}</router-link>
         </div>
     </article>
 </template>
@@ -22,25 +22,25 @@ export default {
 
     data() {
         return {
-            docs: {
+            article: {
                 content: ''
             }
         };
     },
     created() {
-        let that = this;
         this.$store.commit('initArticle');
         this.$store.commit('toggleBtn');
         this.$store.commit('toggleArticle');
-        this.$axios.get('./article?title=' + this.$route.query.title + '').then(function(e) {
-            that.docs = e.data.docs;
+
+        this.$axios.get('./articles?title=' + this.$route.query.title).then(article => {
+            this.article = article || this.article;
         });
     },
 
     computed: {
         mdOptions () {
             return {
-                text: this.docs.content,
+                text: this.article.content,
                 transformTotree: true
             }
         }

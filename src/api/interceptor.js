@@ -14,8 +14,7 @@ function install (Vue, store) {
 
     axios.interceptors.response.use(response => {
         store.commit('toggleWrapper', false);
-
-        return response;
+        return response.data;
     }, error => {
         store.commit('toggleWrapper', false);
 

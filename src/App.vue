@@ -7,7 +7,10 @@
             class="toggle-sidebar icon"
         ></i>
         <header-nav></header-nav>
-        <transition name="side-show" appear>
+        <transition
+            name="side-show"
+            appear
+        >
             <left-side
                 v-show="this.$store.state.isShowSideBar"
                 :show="this.$store.state.isInArticle"
@@ -17,7 +20,7 @@
         <!-- 容器 -->
         <container></container>
         <!-- 容器 -->
-        <footer-con :view="view"></footer-con>
+        <footer-con :view="visited"></footer-con>
         <loading-mask></loading-mask>
     </div>
 </template>
@@ -42,7 +45,7 @@ export default {
     data() {
         return {
             bodyEl: document.body,
-            view: 0,
+            visited: 0,
             sideData: {
                 tags: 0,
                 articles: 0,
@@ -73,12 +76,9 @@ export default {
     },
 
     created() {
-        let that = this;
-        this.$axios.get('./infototals').then(function(e) {
-            that.sideData.tags = e.data.docs.tags;
-            that.sideData.articles = e.data.docs.archives;
-            that.sideData.categories = e.data.docs.categories;
-            that.view = e.data.docs.view;
+        this.$axios.get('./visitors').then(data => {
+            this.sideData = data;
+            this.visited = data.visited;
         });
     }
 };

@@ -1,5 +1,5 @@
 <template>
-    <div id='archives'>
+    <div class="detail">
         <div class='archives-sort-title'>
             Archives - {{archives.length}}
         </div>
@@ -33,15 +33,23 @@
 
 <script>
 export default {
-    name: 'archives',
+    name: 'DetailList',
+
+    props: {
+        title: {
+            type: String,
+
+        }
+    },
+
     data: function() {
         return {
-            archives: []
+            titles: []
         };
     },
     created() {
-        this.$axios.get('./archives').then(archives => {
-            this.archives = archives;
+        this.$axios.get('./archives').then(titles => {
+            this.titles = titles;
         });
     }
 };
@@ -56,7 +64,7 @@ export default {
     opacity: 0;
 }
 
-#archives {
+.detail {
     padding: 3rem 0 3rem;
 }
 </style>

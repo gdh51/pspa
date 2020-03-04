@@ -1,48 +1,43 @@
-import index from '../components/childrens/index.vue';
-import aboutMe from '../components/childrens/aboutMe.vue';
-import archives from '../components/childrens/archives.vue';
-import arTemp from '../components/childrens/arTemp.vue';
-import categories from '../components/childrens/categories.vue';
-import tags from '../components/childrens/tags.vue';
-import specific from '../components/childrens/specific.vue';
+const Index = () => import('../components/childrens/index.vue');
+const AboutMe = () => import('../components/childrens/about-me/index.vue');
+const Archives = () => import('../components/childrens/archives.vue');
+const Article = () => import('../components/childrens/article/index.vue');
+const Categories = () => import('../components/childrens/categories/index.vue');
+const Tags = () => import('../components/childrens/tags/index.vue')
 
 const routes = [{
         path: '/about',
         name: 'about',
-        component: aboutMe
+        component: AboutMe
     },
     {
         path: '/',
         name: 'index',
-        component: index
+        component: Index
     },
     {
         path: '/archives',
         name: 'archives',
-        component: archives
+        component: Archives
     },
     {
         path: '/categories',
         name: 'categories',
-        component: categories
+        component: Categories
     },
     {
         path: '/tags',
         name: 'tag',
-        component: tags,
+        component: Tags
     },
     {
-        path: '/article',
-        component: arTemp
-    },
-    {
-        path: '/:tag/:name',
-        name: 'specific',
-        component: specific,
+        path: '/articles',
+        name: 'articles',
+        component: Article
     },
     {
         path: '*',
-        component: index
+        component: Index
     }
 ];
 

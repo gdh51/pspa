@@ -12,9 +12,11 @@ module.exports = {
     },
 
     devServer: {
-        before (app) {
-            app.use(mockMiddleware());
-        }
+        // before (app) {
+        //     app.use(mockMiddleware());
+        // },
+
+        proxy: 'http://localhost:3000'
     },
 
     // eslint验错
