@@ -5,7 +5,7 @@
             <router-link
                 v-for='tag in tags'
                 :key='tag._id'
-                :to="tag.type + '/' + tag.title"
+                :to="'/tags/' + tag.title"
                 :style="{fontSize:Math.random()*2+'em',opacity:Math.random()+0.2}"
                 class='rotate'
             >

@@ -33,7 +33,8 @@ async function searchMockData(path, method) {
     let { absolutePath, state } = await isFileExist(path);
 
     if (!state) return noop;
-    let hit = map[absolutePath] || (map[absolutePath] = require(absolutePath)[method.toLocaleLowerCase()]);
+    let hit = map[absolutePath] || (map[absolutePath] = require(absolutePath)[method.toLowerCase()]);
+
     return hit ? hit : noop;
 }
 

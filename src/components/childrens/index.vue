@@ -58,7 +58,7 @@ export default {
         };
     },
     created() {
-        this.$axios.get('./index').then(articles => {
+        this.$axios.get('/index').then(articles => {
             this.articles = articles;
         });
     }

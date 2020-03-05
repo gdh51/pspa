@@ -14,7 +14,7 @@ const {
 
 function initRouter(app) {
     const router = express.Router();
-    app.use(favicon(join(__dirname, '../../dist/img/favicon.ico')));
+    app.use(favicon(join(__dirname, '../../favicon.ico')));
     router.get('/index.html', indexController)
     router.get('/visitors', visitorsController.get);
     router.get('/index', articlesController.getAll);

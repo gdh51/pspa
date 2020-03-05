@@ -16,7 +16,7 @@ app.use(history({
 }));
 
 // 开放静态资源
-app.use(express.static(path.join(__dirname, '../dist')));
+app.use(express.static(path.join(__dirname, './static')));
 
 // // 先允许跨域
 // app.all('*', function (req, res, next) {

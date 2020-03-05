@@ -4,10 +4,10 @@ const {
 
 const tagsController = {
     getSpecific(req, res) {
-        const title = req.query.title;
+        const title = req.params.specific;
 
         Tags
-            .findOne({ title })
+            .find({ title })
             .exec((err, tag) => {
                 res.json(tag);
             });

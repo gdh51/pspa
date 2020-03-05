@@ -1,29 +1,30 @@
 <template>
-    <div id='archives'>
+    <div class="detail">
         <div class='archives-sort-title'>
-            Archives - {{archives.length}}
+            {{ tag.title }} - {{ tag.articles.length }}
         </div>
         <div class='archives-sort'>
             <div class='archives-sort-items year'>
                 2019
             </div>
             <transition-group
+                v-if="tag.articles.length"
                 name='slide-in'
                 appear
             >
                 <div
                     class='archives-sort-items'
-                    v-for='item in archives'
-                    :key='item.time'
+                    v-for='article in tag.articles'
+                    :key='article.time'
                 >
                     <time class='archives-sort-item_time'>
-                        {{item.time}}
+                        {{ article.time }}
                     </time>
                     <router-link
-                        :to='item.title'
+                        :to="{ name: 'articles',  query: { title: article.title } }"
                         class='archives-sort-item_title'
                     >
-                        {{item.title}}
+                        {{ article.title }}
                     </router-link>
                 </div>
             </transition-group>
@@ -33,16 +34,23 @@
 
 <script>
 export default {
-    name: 'archives',
+    name: 'SearchTag',
+
     data: function() {
         return {
-            archives: []
+            tag: {
+                title: 'None',
+                articles: []
+            }
         };
     },
-    created() {
-        this.$axios.get('./archives').then(archives => {
-            this.archives = archives;
-        });
+
+    created () {
+        this.serachContent();
+    },
+
+    beforeRouteUpdate (to, from) {
+        this.serachContent();
     }
 };
 </script>
@@ -56,9 +64,7 @@ export default {
     opacity: 0;
 }
 
-#archives {
+.detail {
     padding: 3rem 0 3rem;
 }
 </style>
-
-

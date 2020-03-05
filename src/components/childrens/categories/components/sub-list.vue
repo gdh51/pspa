@@ -2,7 +2,7 @@
     <ul>
         <li v-for='item in categories'
            :key='item.id'>
-            <router-link :to='item.title'>
+            <router-link :to="'/tags/' + item.title">
                 {{ item.title }}
             </router-link>
             <span class='categories-list-count'>{{ item.tags.length }}</span>

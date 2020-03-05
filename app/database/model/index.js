@@ -2,11 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const model = mongoose.model.bind(mongoose);
 const ObjectId = mongoose.Schema.Types.ObjectId;
-const ShareSchema = {
-    title: String,
-    id: ObjectId,
-    tags: Array
-};
 
 // 定义文章模型
 const articlesSchema = Schema({
@@ -33,9 +28,17 @@ const visitorsSchema = {
 };
 
 
-const tagsSchema = Schema(ShareSchema);
+const tagsSchema = Schema({
+    title: String,
+    id: ObjectId,
+    articles: Array
+});
 
-const categoriesSchema = Schema(ShareSchema);
+const categoriesSchema = Schema({
+    title: String,
+    id: ObjectId,
+    tags: Array
+});
 
 let Schemas = {
     Articles: articlesSchema,

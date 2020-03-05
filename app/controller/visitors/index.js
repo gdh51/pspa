@@ -6,8 +6,11 @@ const visitorsController = {
 
     get(req, res) {
         Visitors.findOne({})
-            .exec((err, tag) => {
-                res.json(tag);
+            .exec((err, info) => {
+                if (err) return res.json({});
+                info.visited += 1;
+                info.save();
+                res.json(info);
             });
     }
 };

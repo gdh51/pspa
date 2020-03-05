@@ -4,10 +4,10 @@ const {
 
 const categoriesController = {
     getSpecific(req, res) {
-        const title = req.query.title;
+        const title = req.params.specific;
 
         Categories
-            .findOne({
+            .find({
                 title
             })
             .exec((err, category) => {

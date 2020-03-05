@@ -14,6 +14,7 @@ function mockMiddleware() {
         if (!acceptsHtml(accept)) {
             if (isRestful(req.path)) {
                 searchMockData(req.path, req.method).then(data => {
+
                     if (!data) return next();
 
                     // 返回该数据
@@ -21,8 +22,9 @@ function mockMiddleware() {
                         "Content-Type": "application/json; charset=utf-8",
                         "X-Mock": "proxy"
                     });
+
                     res.json(data(req));
-                }).catch(() => next());
+                }).catch(e => next(e));
                 return;
             }
 
