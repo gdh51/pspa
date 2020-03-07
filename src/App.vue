@@ -76,7 +76,7 @@ export default {
     },
 
     created() {
-        this.$axios.get('./visitors').then(data => {
+        this.$axios.put('./visitors').then(data => {
             this.sideData = data;
             this.visited = data.visited;
         });

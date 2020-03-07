@@ -1,15 +1,13 @@
-# personal-blog
+# 个人博客项
 
-## 项目目录
+该项目主要用于展示个人的日常积累的文章和博客与平时记录的日志
 
-|--config              webpack配置文件 <br>
-|--src <br>
-   ├─api               服务器接口 <br>
-   ├─assets            静态文件资源 <br>
-   │  ├─fonts <br>
-   │  └─img <br>
-   ├─components <br>
-   │  └─childrens <br>
-   ├─router             路由控制逻辑 <br>
-   └─store              vue-x存储 <br>
-       └─modulesh
+## 项目技术栈
+
+该项目主要为一个`Spa`项目，前端基于`Vue + VueX + VueRouter`组成，路由由前端控制，后端只负责下发`API`。
+
+后端通过`Nodejs`来进行具体的实现，主要的框架运用的`express`，其接口`API`遵循`Restful`接口设计规范进行设计，数据库使用的是`mongodb`。
+
+### 其他组件库
+
+在项目中并未用到当前流行的一些组件库，而是使用了一个自己编写的`Markdown`编译器集成的组件库，实现了文章的生成与阅读进度的具体跟踪，[相关仓库地址](https://github.com/gdh51/l-markdown)
