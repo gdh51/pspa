@@ -3,6 +3,7 @@ const app = express();
 const history = require('connect-history-api-fallback');
 const initRouter = require('./routes/index');
 const bodyParser = require('body-parser');
+const { cached } = require('./config/index');
 const { cors } = require('./config/index');
 const path = require('path');
 require('./database/index');
@@ -16,7 +17,7 @@ app.use(history({
 }));
 
 // 开放静态资源
-app.use(express.static(path.join(__dirname, './static')));
+app.use(express.static(path.join(__dirname, './static')), cached);
 
 // // 先允许跨域
 // app.all('*', function (req, res, next) {
