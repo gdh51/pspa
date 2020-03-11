@@ -13,7 +13,7 @@
     </ul>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .categories-list-count {
     margin-left: 0.4rem;
     color: #eee7da;

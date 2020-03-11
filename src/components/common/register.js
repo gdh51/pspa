@@ -1,7 +1,8 @@
 import PoloHr from './separator/polo_hr.vue';
 import LoadingMask from './mask/mask.vue';
+import Icon from './icon/index.vue'
 
-const Components = [PoloHr, LoadingMask];
+const Components = [PoloHr, LoadingMask, Icon];
 
 // 注册全局组件
 export default Vue => {
