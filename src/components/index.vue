@@ -5,7 +5,7 @@
         <container></container>
         <!-- 容器 -->
         <footer-container v-bind="$attrs"></footer-container>
-        <icon :style="iconStyle"
+        <icon :class="iconClass"
               @click="toggleShrink"
                icon="toggle-sidebar"/>
     </div>
@@ -22,7 +22,12 @@ $color = #ffb129
     font-size 16px
     cursor pointer
     color $color
-    transition all 0.5s linear
+    transform: rotateZ(180deg)
+    transition all 0.3s linear
+
+>>>.toggle-shrink
+    left .5rem
+    transform: rotateZ(0)
 
 @media screen and (max-width: 768px)
     >>>.toggle-sidebar
@@ -61,9 +66,9 @@ export default {
     },
 
     computed: {
-        iconStyle () {
-            let degree = this.isShrink ? '180deg' : '0deg';
-            return { transform: 'rotateZ(' + degree + ')' };
+
+        iconClass () {
+            return this.isShrink ? 'toggle-shrink' : '';
         },
 
         ...mapState('sideBar/', ['isShrink'])

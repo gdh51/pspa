@@ -18,37 +18,7 @@ Vue.config.devtools = false;
 const vm = new Vue({
     render: h => h(App),
     router,
-    store,
-    methods: {
-        checkWindowSize() {
-            var timer = 0,
-                headerNavVue = this.$children[0].$children[1];
-            return function() {
-                if (timer) {
-                    clearTimeout(timer);
-                }
-                timer = setTimeout(() => {
-                    var windowWidth = window.innerWidth;
-                    var menu = headerNavVue.$refs.menu;
-                    menu.style.opacity = 1;
-                    if (windowWidth < '1024') {
-                        document.body.style.paddingLeft = 0;
-                    }
-                    if (windowWidth > '768') {
-                        headerNavVue.isShowMenu = true;
-                        menu.style.display = 'block';
-                        if (!menu.classList.contains('slide-down')) {
-                            menu.classList.add('slide-down');
-                        }
-                    } else {
-                        menu.style.display = headerNavVue.isShowMenu == true;
-                    }
-                }, 1000);
-            };
-        }
-    }
+    store
 }).$mount('#app');
 
 initRouter(vm, router);
-
-window.addEventListener('resize', vm.checkWindowSize(), false);

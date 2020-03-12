@@ -1,5 +1,5 @@
 <template functional>
-    <i :class="[props.icon, data.staticClass]"
+    <i :class="[props.icon, data.staticClass, data.class, data.style]"
         class="icon"
        v-on="listeners"></i>
 </template>
