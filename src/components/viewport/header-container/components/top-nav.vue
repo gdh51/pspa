@@ -129,6 +129,9 @@
                 color #ffb129
                 text-shadow none
                 font-size 0.8rem
+
+    .nav-sticky
+        padding-right 36px
 </style>
 
 <script>

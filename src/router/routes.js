@@ -1,7 +1,7 @@
-const Index = () => import('../components/childrens/index.vue');
+const Index = () => import('../components/viewport/content-container/route-components/index.vue');
 const AboutMe = () => import('../components/childrens/about-me/index.vue');
 const Archives = () => import('../components/childrens/archives/index.vue');
-const Article = () => import('../components/childrens/article/index.vue');
+const Article = () => import('../components/viewport/content-container/route-components/article/index.vue');
 const Categories = () => import('../components/childrens/categories/index.vue');
 const Tags = () => import('../components/childrens/tags/index.vue');
 const Specific = () => import('../components/childrens/specific/index.vue');
@@ -13,7 +13,7 @@ const routes = [{
     },
     {
         path: '/',
-        name: 'index',
+        name: 'Index',
         component: Index
     },
     {

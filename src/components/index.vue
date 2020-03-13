@@ -1,9 +1,9 @@
 <template>
     <div class="view-container">
         <header-container/>
-        <!-- 容器 -->
-        <container></container>
-        <!-- 容器 -->
+        <!-- 内容容器 -->
+        <content-container/>
+        <!-- 内容容器 -->
         <footer-container v-bind="$attrs"></footer-container>
         <icon :class="iconClass"
               @click="toggleShrink"
@@ -50,7 +50,7 @@ $color = #ffb129
 <script>
 import HeaderContainer from './viewport/header-container/index'
 import FooterContainer from './viewport/footer-container/index'
-import Container from './container'
+import ContentContainer from './viewport/content-container/index'
 import { mapState, mapMutations } from 'vuex'
 
 export default {
@@ -62,7 +62,7 @@ export default {
     components: {
         HeaderContainer,
         FooterContainer,
-        Container
+        ContentContainer
     },
 
     computed: {

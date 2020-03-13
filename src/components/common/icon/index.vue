@@ -45,6 +45,12 @@
 .toggle-sidebar::before
     content '\ea3c'
 
+.file::before
+    content '\e930'
+
+.links::before
+    content '\e936'
+
 </style>
 
 <script>

@@ -11,38 +11,44 @@
     </div>
 </template>
 
-<style lang="less" scoped>
-@lightgreen: #4ccb70;
-.side-nav-info {
-    .side-nav-topic {
-        margin-top: 0.3rem;
-        padding-right: 0.4rem;
-        text-align: center;
-        font-size: 0.8rem;
-    }
+<style lang="stylus" scoped>
+$lightgreen = #4ccb70
+.side-nav-info
+    padding-right .5rem
 
-    .side-nav-process {
-        padding-left: 0.5rem;
-        font-size: 0.6rem;
-        color: @lightgreen;
+    .side-nav-topic
+        margin-top 0.3rem
+        padding-right 0.4rem
+        text-align center
+        font-size 0.8rem
 
-        .process-bar {
-            width: 100%;
-            height: 0.06rem;
-            background-color: @lightgreen;
-        }
-    }
 
-    .side-nav-ctx {
-        padding-left: 0.3rem;
-        margin-top: 0.1rem;
-        color: #96918b;
+    .side-nav-process
+        padding-left 0.5rem
+        font-size 0.6rem
+        color $lightgreen
 
-        /deep/.sub_item-subtitle:hover {
-            color: #fcce77;
-        }
-    }
-}
+        .process-bar
+            width 100%
+            height 0.06rem
+            background-color $lightgreen
+
+
+
+    .side-nav-ctx
+        padding-left 0.3rem
+        margin-top 0.1rem
+        color #96918b
+
+        >>>.sub_item-subtitle:hover
+            color #fcce77
+
+        >>>.catalog-container
+            position static
+            width auto
+
+
+
 </style>
 
 <script>

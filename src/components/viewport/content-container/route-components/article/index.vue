@@ -1,14 +1,12 @@
 <template>
     <article id='ar-template'>
-        <div class='ar-content'>
+        <div class="ar-content">
             <l-markdown v-bind="mdOptions"
                        @md-dom-tree="updateCatalog"/>
         </div>
-        <div
-            class='ar-tags'
+        <div class="ar-tags"
             v-for="tag in article.tags"
-            :key='tag.title'
-        >
+            :key='tag.title'>
             <router-link :to='tag.title'>{{ tag.title }}</router-link>
         </div>
     </article>
@@ -28,9 +26,7 @@ export default {
         };
     },
     created() {
-        this.$store.commit('initArticle');
-        this.$store.commit('toggleBtn');
-        this.$store.commit('toggleArticle');
+        this.toggleArticle(true);
 
         this.$axios.get('./articles?title=' + this.$route.query.title).then(article => {
             this.article = article || this.article;
@@ -47,12 +43,12 @@ export default {
     },
 
     methods: {
-        ...mapMutations(['updateCatalog'])
+        ...mapMutations('sideBar/', ['updateCatalog']),
+        ...mapMutations('article/', ['toggleArticle'])
     },
 
     destroyed() {
-        this.$store.commit('toggleBtn');
-        this.$store.commit('toggleArticle');
+        this.toggleArticle();
     }
 };
 </script>

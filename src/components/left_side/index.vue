@@ -6,15 +6,15 @@
                  v-show="isInArticle">
                 <button
                     type='button'
-                    v-on:click='true'
-                >切换侧边栏</button>
+                    @click="changeSide"
+                >Toggle</button>
                 <polo-hr />
             </div>
         </transition>
         <transition name='change-tab'
                     mode='out-in'
                     appear>
-            <total-nav v-if="!isInArticle"
+            <total-nav v-if="positiveSide"
                        key='side-info'
                        v-bind="$attrs"/>
             <article-nav v-else
@@ -36,8 +36,35 @@ export default {
         TotalNav
     },
 
+    data () {
+        return {
+
+            // 该变量表示显示侧边栏哪一面，由组件控制
+            positiveSide: true
+        };
+    },
+
     computed: {
-        ...mapState('sideBar/', ['isInArticle'])
+        ...mapState('article/', ['isInArticle'])
+    },
+
+    watch: {
+        isInArticle: {
+            handler(val) {
+                if (val) {
+                    this.positiveSide = false;
+                    return;
+                }
+                this.positiveSide = true;
+            },
+            immediate: true
+        }
+    },
+
+    methods: {
+        changeSide () {
+            this.positiveSide = !this.positiveSide;
+        }
     }
 };
 </script>
