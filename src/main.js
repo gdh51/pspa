@@ -12,8 +12,8 @@ Vue.use(LMarkdown);
 
 // 注册请求拦截器
 Vue.use(axios, store);
-Vue.config.productionTip = false;
-Vue.config.devtools = false;
+Vue.config.productionTip = true;
+Vue.config.devtools = true;
 
 const vm = new Vue({
     render: h => h(App),

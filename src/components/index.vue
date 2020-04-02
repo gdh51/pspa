@@ -8,6 +8,7 @@
         <icon :class="iconClass"
               @click="toggleShrink"
                icon="toggle-sidebar"/>
+        <dnf-abyss/>
     </div>
 </template>
 
@@ -51,6 +52,7 @@ $color = #ffb129
 import HeaderContainer from './viewport/header-container/index'
 import FooterContainer from './viewport/footer-container/index'
 import ContentContainer from './viewport/content-container/index'
+import DnfAbyss from './ohter-features/dnf-diary'
 import { mapState, mapMutations } from 'vuex'
 
 export default {
@@ -62,7 +64,8 @@ export default {
     components: {
         HeaderContainer,
         FooterContainer,
-        ContentContainer
+        ContentContainer,
+        DnfAbyss
     },
 
     computed: {

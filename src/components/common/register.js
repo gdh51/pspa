@@ -1,5 +1,5 @@
 import PoloHr from './separator/polo_hr.vue';
-import LoadingMask from './mask/mask.vue';
+import LoadingMask from './mask/loading-mask/index.vue';
 import Icon from './icon/index.vue'
 
 const Components = [PoloHr, LoadingMask, Icon];

@@ -12,7 +12,7 @@
                 <viewport :view="visited"/>
             </template>
         </main-layout>
-        <loading-mask></loading-mask>
+        <loading-mask :visible="showWrapper"/>
     </div>
 </template>
 
@@ -44,7 +44,8 @@ export default {
     },
 
     computed: {
-        ...mapState('sideBar/', ['isShrink'])
+        ...mapState('sideBar/', ['isShrink']),
+        ...mapState(['showWrapper'])
     },
 
     created() {
