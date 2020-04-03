@@ -19,7 +19,7 @@ $color = #ffb129
     position fixed
     z-index 3333
     bottom 20px
-    left 316px
+    left 16px
     font-size 16px
     cursor pointer
     color $color
@@ -27,20 +27,7 @@ $color = #ffb129
     transition all 0.3s linear
 
 >>>.toggle-shrink
-    left .5rem
     transform: rotateZ(0)
-
-@media screen and (max-width: 768px)
-    >>>.toggle-sidebar
-        display none
-        position fixed
-        bottom 20px
-        left 16px
-        z-index 100
-        font-size 16px
-        cursor pointer
-        color $color
-        transition all 0.5s linear
 
 @media screen and (max-width: 1024px)
     >>>.toggle-sidebar

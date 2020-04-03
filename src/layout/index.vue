@@ -27,7 +27,7 @@
         box-shadow -0.25rem 0 0.25rem rgb(223, 207, 175) inset
         background-color #eee7da
 
-        @media screen and (max-width: 768px)
+        @media screen and (max-width: 1024px)
             left -300px
 
     & .shrink
@@ -38,7 +38,7 @@
         padding-left 300px
         transition all .3s linear
 
-        @media screen and (max-width: 768px)
+        @media screen and (max-width: 1024px)
             padding-left 0
 
     & .shrink

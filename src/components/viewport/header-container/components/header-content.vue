@@ -67,7 +67,7 @@
         &:hover
             opacity 1
 
-@media screen and (max-width: 768px)
+@media screen and (max-width: 1024px)
     .nav-info
         .nav-name
             font-size 1.3rem

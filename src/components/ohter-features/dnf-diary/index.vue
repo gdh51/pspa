@@ -20,6 +20,8 @@
 </style>
 
 <script>
+import Diary from './components/index'
+
 export default {
     name: 'DnfAbyss',
     data () {
@@ -34,7 +36,15 @@ export default {
             if (modal) {
                 return modal.$show();
             }
-            // this.$modal();
+            this.singleton = this.$modal({
+                component: Diary,
+                props: {
+                    width: '90vw',
+                    height: '90vh'
+                },
+                title: '深渊记录表！',
+                hideEvent: () => this.singleton.$hide()
+            });
         }
     }
 }

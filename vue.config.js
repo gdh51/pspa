@@ -16,7 +16,7 @@ module.exports = {
             app.use(mockMiddleware());
         },
 
-        proxy: 'http://localhost:3000'
+        // proxy: 'http://localhost:3000'
     },
 
     // eslint验错

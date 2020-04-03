@@ -43,10 +43,6 @@
     content: "\f1d7";
 }
 
-.icon-home3:before {
-    content: "\e902";
-}
-
 .icon-connection:before {
     content: "\e91b";
 }
@@ -77,10 +73,6 @@
 
 .icon-redo:before {
     content: "\e966";
-}
-
-.icon-search:before {
-    content: "\e986";
 }
 
 .icon-link:before {
@@ -145,10 +137,6 @@
 
 .icon-strikethrough:before {
     content: "\ea65";
-}
-
-.icon-paragraph-justify:before {
-    content: "\ea7a";
 }
 
 .icon-facebook2:before {

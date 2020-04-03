@@ -51,6 +51,9 @@
 .links::before
     content '\e936'
 
+.home::after
+    content '\e902'
+
 </style>
 
 <script>

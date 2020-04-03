@@ -103,7 +103,7 @@
 .nav-scroll-up
     top -60px
 
-@media screen and (max-width: 768px)
+@media screen and (max-width: 1024px)
     .nav-bar
         >>>.phone-menu
             display block
@@ -138,7 +138,7 @@
 import { on, off, trigger } from '../../../../shared/index'
 import { toggleFade } from './util'
 
-const SmallScreenSize = 768;
+const SmallScreenSize = 1024;
 
 export default {
     name: 'TopNav',
