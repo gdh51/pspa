@@ -14,6 +14,7 @@
 
     .dialog-content
         padding 10px
+        overflow auto
 
     >>>.home
         position absolute
@@ -21,12 +22,10 @@
         right 20px
         font-size 24px
         color #000
+        cursor pointer
 
-&:after
-    content ''
-    display inline-block
-    height 100%
-    vertical-align middle
+        &:hover
+            color #fede4b
 </style>
 
 <script>
@@ -81,7 +80,8 @@ export default {
 
         // 添加插槽
         children.push(h('div', {
-            staticClass: 'dialog-content'
+            staticClass: 'dialog-content',
+            style: this.dialogContentStyle
         }, this.$slots.default));
 
         return h('MaskWrapper', {
@@ -90,15 +90,14 @@ export default {
             }
         }, [
             h('div', {
-                staticClass: 'dialog-container',
-                style: this.dialogStyle
+                staticClass: 'dialog-container'
             },
             children)
         ]);
     },
 
     computed: {
-        dialogStyle () {
+        dialogContentStyle () {
             return {
                 width: normalizeSize(this.width),
                 height: normalizeSize(this.height)

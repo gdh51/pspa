@@ -40,7 +40,7 @@ export default {
                 component: Diary,
                 props: {
                     width: '90vw',
-                    height: '90vh'
+                    height: '80vh'
                 },
                 title: '深渊记录表！',
                 hideEvent: () => this.singleton.$hide()

@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'orgin';
+    font-family: 'origin';
     src: url('../fonts/qingliu.woff');
 }
 
@@ -191,7 +191,7 @@ address {
 }
 
 body {
-    font: 14px "orgin", HELVETICA;
+    font: 14px "origin", HELVETICA;
     background: #fff;
     -webkit-text-size-adjust: 100%;
 }

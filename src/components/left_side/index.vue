@@ -96,7 +96,7 @@ $orange = #ffb129
             padding 0.5rem 0.6rem
             color $orange
             cursor pointer
-            font-family 'orgin'
+            font-family 'origin'
             transition all 1s ease
 
             &:hover
