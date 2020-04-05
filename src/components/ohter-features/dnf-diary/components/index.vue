@@ -7,39 +7,52 @@
                :table-uid="table.uid"
                :title="table.title"/>
         </template>
+        <div v-else
+             class="diary_ctx-empty">
+            <myth-color @click-event="addEquipment">暂无深渊装备记录表，请点击添加</myth-color>
+        </div>
     </div>
 </template>
 
 <style lang="stylus" scoped>
 .diary-container
+    display flex
     width 100%
     height 100%
+
+    .diary_ctx-empty
+        margin auto
+        font-size 30px
+        cursor pointer
+
+
+
 </style>
 
 <script>
+import MythColor from './myth-color/index'
 import SingleTable from './single-table/index'
-import { } from './equipment'
 
 export default {
     name: 'DiaryContainer',
 
     components: {
-        SingleTable
+        SingleTable,
+        MythColor
     },
 
     data () {
         return {
 
             // 该变量仅用于拉取有多少表格及其大体信息
-            equipmentTables: [{
-                title:'左侧装备',
-                uid: 1
-            },
-            {
-                title:'右侧装备',
-                uid: 2
-            }]
+            equipmentTables: []
         };
+    },
+
+    methods: {
+        addEquipment () {
+
+        }
     }
 }
 </script>
