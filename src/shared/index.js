@@ -11,3 +11,13 @@ export function trigger(el, type) {
     event.initEvent(type, true, true);
     el.dispatchEvent(event);
 }
+
+export function extend(to, from) {
+    for (let key in from) {
+        if (Object.prototype.hasOwnProperty.call(from[key])) {
+            to[key] = from[key];
+        }
+    }
+
+    return to;
+}

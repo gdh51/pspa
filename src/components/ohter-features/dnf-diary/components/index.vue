@@ -1,8 +1,8 @@
 <template>
     <div class="diary-container">
-        <template v-if="equipmentTables.length">
+        <template v-if="wishTables.length">
             <single-table
-                v-for="table in equipmentTables"
+                v-for="table in wishTables"
                :key="table.uid"
                :table-uid="table.uid"
                :title="table.title"/>
@@ -32,6 +32,11 @@
 <script>
 import MythColor from './myth-color/index'
 import SingleTable from './single-table/index'
+import AddForm from './add-form/index'
+import { initTableManager } from './abyss-helper/table-manager.js'
+
+// manager不需要全部响应式处理，所以不需要定义在state中
+let manager = null;
 
 export default {
     name: 'DiaryContainer',
@@ -45,14 +50,27 @@ export default {
         return {
 
             // 该变量仅用于拉取有多少表格及其大体信息
-            equipmentTables: []
+            wishTables: []
         };
     },
 
     methods: {
         addEquipment () {
-
+            this.$modal({
+                component: AddForm,
+                props: {
+                    width: '90vw',
+                    height: '80vh'
+                },
+                title: '选择需要添加的装备'
+            });
         }
-    }
+    },
+
+    created() {
+        manager = initTableManager();
+        console.log('初始化成功', manager);
+        this.wishTables = manager.list;
+    },
 }
 </script>

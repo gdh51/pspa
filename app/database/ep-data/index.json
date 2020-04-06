@@ -1,0 +1,21 @@
+[{
+    "name": "装备1",
+    "sort": 0,
+    "part": "none",
+    "uid": 0,
+    "src": "./a"
+},
+{
+    "name": "装备2",
+    "sort": 1,
+    "part": "auxiliary",
+    "uid": 1,
+    "src": "./b"
+},
+{
+    "name": "装备2",
+    "sort": 2,
+    "part": "ring",
+    "uid": 2,
+    "src": "./c"
+}]

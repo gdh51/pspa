@@ -9,7 +9,8 @@ const {
     tagsController,
     categoriesController,
     indexController,
-    visitorsController
+    visitorsController,
+    epsController
 } = require('../controller/index')
 
 function initRouter(app) {
@@ -24,6 +25,7 @@ function initRouter(app) {
     router.get('/catagories/:specific', categoriesController.getSpecific);
     router.get('/tags', tagsController.getAll);
     router.get('/tags/:specific', tagsController.getSpecific);
+    router.get('/eps', epsController.getAll);
     app.use('/', router);
 }
 

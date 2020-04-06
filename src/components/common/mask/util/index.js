@@ -1,11 +1,12 @@
 let zIndexList = [6666],
 
-    // 起始zIndex
+    // 当前的该生成的zIndex起始值
     zIndex = zIndexList[zIndexList.length - 1];
 
 export function getZIndex() {
-    zIndexList.push(zIndex + 1);
-    return zIndexList[zIndexList.length - 1];
+    zIndex += 1;
+    zIndexList.push(zIndex);
+    return zIndex;
 }
 
 export function resetZIndex(key) {

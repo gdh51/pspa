@@ -30,6 +30,9 @@ class Dialog {
 
         this._instance.dialog = this;
 
+        // vm模版挂载后会替换原元素，所以真实挂载在dom的元素为$el
+        this.mounted_el = this._instance.$el;
+
         if (component) {
             this._instance.$slots.default = [this._instance.$createElement(component)];
         }
@@ -48,7 +51,7 @@ class Dialog {
         instance.visible = false;
         instance.dialog = null;
         instance.$nextTick(() => {
-            instance.$destory();
+            instance.$destroy();
         });
 
         this.mounted_el.remove();

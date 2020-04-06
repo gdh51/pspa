@@ -18,14 +18,16 @@
 
     >>>.home
         position absolute
-        top 10px
+        top 2px
         right 20px
         font-size 24px
         color #000
         cursor pointer
+        transition all .3s ease
 
         &:hover
             color #fede4b
+            transform rotateZ(180deg)
 </style>
 
 <script>
@@ -63,12 +65,12 @@ export default {
     },
 
     render(h) {
-        let children = [h('icon', {
+        let children = [h('div', {
             staticClass: 'home',
             on: {
                 click: this.slideTable
             }
-        })];
+        }, '×')];
         if (this.title) {
             children.push(
                 h('div', {

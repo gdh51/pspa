@@ -4,6 +4,7 @@ const tagsController = require('./tags/index');
 const categoriesController = require('./categories/index');
 const indexController = require('./home/index');
 const visitorsController = require('./visitors/index');
+const epsController = require('./eps/index');
 
 module.exports = {
     archivesController,
@@ -11,5 +12,6 @@ module.exports = {
     tagsController,
     categoriesController,
     indexController,
-    visitorsController
+    visitorsController,
+    epsController
 };

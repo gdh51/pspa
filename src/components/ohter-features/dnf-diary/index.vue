@@ -1,7 +1,7 @@
 <template>
     <div class="dnf-lazy-load"
         @click="showTable">
-        深渊装备记录表
+        <myth-color/>
     </div>
 </template>
 
@@ -21,6 +21,7 @@
 
 <script>
 import Diary from './components/index'
+import MythColor from './components/myth-color/index'
 
 export default {
     name: 'DnfAbyss',
@@ -28,6 +29,10 @@ export default {
         return {
             singleton: null
         };
+    },
+
+    components: {
+        MythColor
     },
 
     methods: {

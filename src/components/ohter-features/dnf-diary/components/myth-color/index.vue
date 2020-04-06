@@ -1,9 +1,3 @@
-<template>
-    <span class="myth" @click="$emit('click-event')">
-        <slot>神话装备展示</slot>
-    </span>
-</template>
-
 <style lang="stylus" scoped>
  .myth
     background linear-gradient(#f9c835, #cc65e9)
@@ -26,7 +20,12 @@ export default {
     },
 
     render (c) {
-        return h(this.tag, this.$slots.default);
+        return c(this.tag, {
+            on: {
+                click: () => this.$emit('click-event')
+            },
+            staticClass: 'myth'
+        }, this.$slots.default || '深渊装备记录表');
     }
 }
 </script>

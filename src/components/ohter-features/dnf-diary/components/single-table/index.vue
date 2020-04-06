@@ -11,19 +11,8 @@
                        class="table-btns_single"
                       @btn-click="delTable"/>
             </div>
-        </div>
-        <div class="table_equipments"
-             v-if="equipments.length">
-            <equipment-img
-                v-for="equipment in equipments"
-                class="table_equipments-eq"
-               :key="equipment.key"
-               :selected="equipment.selected"
-               @wish-come-true="wishComeTrue(equipment)"/>
-        </div>
-        <div v-else
-             class="table_equipments table_equipments-empty">
-            暂无装备，请点击添加
+            <ep-table :equipments="equipments"
+                      @click-event="wishComeTrue(equipment)"/>
         </div>
         <polo-hr/>
     </div>
@@ -52,20 +41,10 @@
                 &:first-of-type
                     margin-bottom 3px
 
-    .table_equipments
-        display flex
-        justify-content center
-
-        .table_equipments-eq
-            margin 0 5px
-
-    .table_equipments-empty
-        color #F34F1D
-        cursor pointer
 </style>
 
 <script>
-import EquipmentImg from './equipment-img/index'
+import EpShowTable from '../common-ep-show-table/index'
 
 export default {
     name: 'SingleTable',
@@ -88,7 +67,7 @@ export default {
     },
 
     components: {
-        EquipmentImg
+        EpShowTable
     },
 
     data () {

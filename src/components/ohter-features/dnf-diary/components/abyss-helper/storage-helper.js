@@ -4,14 +4,15 @@ export class StorageHelper {
     get(key) {
 
         // 优先返回现有结果
-        return StorageHelper.storage[key] || localStorage.getItem(key);
+        return StorageHelper.storage[key] || JSON.parse(localStorage.getItem(key));
     }
 
     has(key) {
 
         // 缓存，防止get重复查询
-        StorageHelper.storage[key] = localStorage.getItem(key);
-        return typeof StorageHelper.storage !== null;
+        StorageHelper.storage[key] = this.get(key);
+
+        return StorageHelper.storage[key] !== null;
     }
 
     remove(key) {
@@ -20,9 +21,20 @@ export class StorageHelper {
     }
 
     set(key, val) {
-        let pendingVal = JSON.stringify(val);
-        StorageHelper.storage[key] = pendingVal;
-        return localStorage.setItem(key, pendingVal);
+        let pendingVal = JSON.stringify(val),
+            result = false;
+
+        // 缓存在storaget上
+        StorageHelper.storage[key] = val;
+
+        try {
+            localStorage.setItem(key, pendingVal);
+            result = true;
+        } catch (e) {
+            // 这里出错仅会在setItem时，所以不用关心result
+        }
+
+        return result;
     }
 
     clearAll() {
