@@ -20,9 +20,12 @@
 
 <script>
 import SuitTable from './components/suit-table/index'
-import { initEquipment } from '../abyss-helper/equipment/index.js'
+import { initEquipment, createSuit } from '../abyss-helper/equipment/index.js'
 export default {
     name: 'AddForm',
+
+    props: ['remoteSuits'],
+
     data () {
         return {
             suits: [],
@@ -35,15 +38,31 @@ export default {
     },
 
     created() {
+        if (this.remoteSuits) {
+            return this.suits = this.remoteSuits;
+        }
         this.$axios.get('/eps').then(suits => {
-            this.suits = suits;
             initEquipment(suits);
+            this.suits = createSuit(suits);
+
+            // 存储原始的配置
+            this.$emit('collectRemoteEps', suits);
         });
     },
 
     methods: {
         addEp (ep) {
-            this.selectedEps.push(ep);
+
+            // 添加
+            if (!ep.selected) {
+                this.selectedEps.push(ep);
+            } else {
+
+                // 移除
+                this.selectedEps.splice(this.selectedEps.indexOf(ep), 1);
+            }
+
+            ep.selected = !ep.selected;
         }
     }
 }

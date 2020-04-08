@@ -50,7 +50,8 @@ export default {
         return {
 
             // 该变量仅用于拉取有多少表格及其大体信息
-            wishTables: []
+            wishTables: [],
+            remoteSuits: void 0
         };
     },
 
@@ -58,11 +59,15 @@ export default {
         addEquipment () {
             this.$modal({
                 component: AddForm,
+                width: '90vw',
+                height: '80vh',
                 props: {
-                    width: '90vw',
-                    height: '80vh'
+                    remoteSuits: this.remoteSuits
                 },
-                title: '选择需要添加的装备'
+                title: '选择需要添加的装备',
+                events: {
+                    collectRemoteEps: eps => (this.remoteSuits = eps)
+                }
             });
         }
     },

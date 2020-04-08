@@ -23,7 +23,7 @@ export const EquipmentNumber = {
 // 表格能容纳的装备模型
 export const Schema = {
     Dress: {
-        head: false,
+        belt: false,
         shoulder: false,
         coat: false,
         pants: false,

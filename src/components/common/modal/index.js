@@ -9,7 +9,8 @@ class Dialog {
         this.height = options.height || 'auto';
         this.width = options.width || 'auto';
         this.props = options.props || {};
-        this.props.title = options.title;
+        this.title = options.title;
+        this.events = options.events || {};
         this._init(options.component);
     }
 
@@ -23,10 +24,14 @@ class Dialog {
 
         // 初始化modal组件
         this._instance = new DialogConstructor({
-            propsData: this.props
+            propsData: {
+                title: this.title,
+                width: this.width,
+                height: this.height
+            }
         }).$mount(this.mounted_el);
 
-        initEventCallback(this.rawOptions, this._instance, this);
+        initCloseEvent(this._instance, this);
 
         this._instance.dialog = this;
 
@@ -34,7 +39,10 @@ class Dialog {
         this.mounted_el = this._instance.$el;
 
         if (component) {
-            this._instance.$slots.default = [this._instance.$createElement(component)];
+            this._instance.$slots.default = [this._instance.$createElement(component, {
+                props: this.props,
+                on: this.events
+            })];
         }
     }
 
@@ -58,10 +66,21 @@ class Dialog {
     }
 }
 
-function initEventCallback(opt, ctx, dialog) {
+// 初始化弹框的关闭行为
+function initCloseEvent(vm, dialog) {
 
-    // 默认情况下，关闭窗口会销毁弹框，如果传入hide事件，则交给用户自定义行为。
-    ctx.$on('hide-table', opt.hideEvent || (() => dialog.$destory()));
+    // 获取用户想在关闭弹窗时自定义的行为
+    let rawOptions = dialog.rawOptions;
+    let origin = dialog.events['hide-table'];
+
+    delete dialog.events['hide-table'];
+
+    vm.$on('hide-table', () => {
+        origin && origin();
+
+        // 默认情况下，关闭窗口会销毁弹框，如果传入hide事件，则交给用户自定义行为。
+        (rawOptions.hideEvent || dialog.$destory).call(dialog)
+    });
 }
 
 export function $modal(opt) {

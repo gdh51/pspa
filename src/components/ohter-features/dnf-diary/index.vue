@@ -43,10 +43,8 @@ export default {
             }
             this.singleton = this.$modal({
                 component: Diary,
-                props: {
-                    width: '90vw',
-                    height: '80vh'
-                },
+                width: '90vw',
+                height: '80vh',
                 title: '深渊记录表！',
                 hideEvent: () => this.singleton.$hide()
             });

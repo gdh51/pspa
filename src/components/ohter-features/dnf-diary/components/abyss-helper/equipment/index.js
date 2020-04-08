@@ -6,16 +6,16 @@ class Equipment {
     constructor({
         name,
         sort,
-        src,
         part,
         uid,
+        myth,
         selected = false
     }) {
         this.name = name;
         this.sort = SORT[sort];
         this.part = part;
         this.uid = uid;
-        this.src = src;
+        this.myth = !!myth;
         this.selected = selected;
     }
 }
@@ -34,4 +34,19 @@ export function initEquipment(map) {
 
     // 为了方便管理/查询，装备的uid，同其在数组的下标相同
     Equipment.map = [...map.map(pack => pack.eps)];
+}
+
+class Suit {
+    constructor (opt) {
+        this.name = opt.name;
+        this.eps = initEps(opt.eps);
+    }
+}
+
+function initEps (eps) {
+    return eps.map(ep => restoreEquipment(ep));
+}
+
+export function createSuit (suits) {
+    return suits.map(suit => new Suit(suit));
 }
