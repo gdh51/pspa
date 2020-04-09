@@ -2,7 +2,8 @@ export const SORT = [
     'Weapon',
     'Auxiliary',
     'Jewelry',
-    'Dress'
+    'Dress',
+    'Mixin'
 ];
 
 export const SortToName = {
@@ -28,21 +29,26 @@ export const Schema = {
         coat: false,
         pants: false,
         shoes: false,
+        myth: false
     },
 
     Jewelry: {
         necklace: false,
         ring: false,
-        bracelet: false
+        bracelet: false,
+        myth: false
     },
 
     Auxiliary: {
         auxiliary: false,
         miscarcand: false,
-        earrings: false
+        earrings: false,
+        myth: false
     },
 
     Weapon: {
         none: false
     }
 };
+
+Object.freeze(Schema);

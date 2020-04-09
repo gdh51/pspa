@@ -14,8 +14,28 @@ export function trigger(el, type) {
 
 export function extend(to, from) {
     for (let key in from) {
-        if (Object.prototype.hasOwnProperty.call(from[key])) {
+        if (Object.prototype.hasOwnProperty.call(from, key)) {
             to[key] = from[key];
+        }
+    }
+
+    return to;
+}
+
+// 深度克隆对象
+export function deepClone(from) {
+    let to = {};
+    for (let key in from) {
+        if (Object.prototype.hasOwnProperty.call(from, key)) {
+            let currentVal = from[key],
+                cloneVal = currentVal;
+            if (Array.isArray(currentVal)) {
+                cloneVal = currentVal.map(val => deepClone(val));
+            } else if (typeof currentVal === 'object') {
+                cloneVal = deepClone(currentVal);
+            }
+
+            to[key] = cloneVal;
         }
     }
 

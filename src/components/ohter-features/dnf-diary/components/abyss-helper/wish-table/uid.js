@@ -1,23 +1,34 @@
 let key = 'blink182',
+    initUid = 0,
     uid = 0,
     list = [];
 
 
 export function genUid() {
     let nUid = key + (++uid);
-    list.push(nUid);
+    list.push(uid);
     return nUid;
 }
 
-export function delUid(uid) {
+export function delUid(targetUid) {
 
-    // 删除对应的uid
-    list.splice(list.lastIndexOf(uid), 1);
+    // 无序号则直接删除
+    if (!list.length) {
+        uid = initUid;
+        return;
+    } else {
+        uid = Number(targetUid.slice(8));
 
-    // 更新uid
-    uid = list[list.length - 1];
+        // 删除对应的uid
+        list.splice(list.lastIndexOf(targetUid), 1);
+        if (list.length) {
+            uid = list[list.length - 1];
+        } else {
+            uid = initUid;
+        }
+    }
 }
 
 export function initUidState(start = '') {
-    uid = Number(start.slice(8)) + 1;
+    initUid = uid = Number(start.slice(8));
 }

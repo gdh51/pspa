@@ -69,17 +69,18 @@ class Dialog {
 // 初始化弹框的关闭行为
 function initCloseEvent(vm, dialog) {
 
-    // 获取用户想在关闭弹窗时自定义的行为
-    let rawOptions = dialog.rawOptions;
-    let origin = dialog.events['hide-table'];
+    let rawOptions = dialog.rawOptions,
 
-    delete dialog.events['hide-table'];
+        // 用户想在关闭弹窗前自定义的行为
+        origin = dialog.events['hide-table'] || dialog.events.hideTable;
 
-    vm.$on('hide-table', () => {
-        origin && origin();
+    delete (dialog.events['hide-table']  || dialog.events.hideTable);
+
+    vm.$on('hide-table', (...arg) => {
+        origin && origin(...arg);
 
         // 默认情况下，关闭窗口会销毁弹框，如果传入hide事件，则交给用户自定义行为。
-        (rawOptions.hideEvent || dialog.$destory).call(dialog)
+        (rawOptions.hideEvent || dialog.$destory).call(dialog, ...arg);
     });
 }
 

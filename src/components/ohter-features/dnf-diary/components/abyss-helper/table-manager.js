@@ -2,8 +2,7 @@ import {
     StorageHelper
 } from './storage-helper'
 import {
-    initWishTables,
-    createWishTable
+    initWishTables
 }
 from './wish-table/index'
 import { initUidState } from './wish-table/uid'
@@ -16,7 +15,6 @@ class TableManager extends StorageHelper {
     constructor() {
         super();
         this.key = TableUidList;
-        this.list = null;
 
         // 初始化表格管理员
         this._init(TableUidList);
@@ -31,22 +29,27 @@ class TableManager extends StorageHelper {
         return this.get(uid);
     }
 
+    //  更新某个表格的信息
     updateTable(uid, val) {
         return this.set(uid, val);
     }
 
-    addTable(epUids, sort) {
+    // 添加表格uid至管理员队列
+    addTable(tableUid) {
 
-        // 创建新的许愿表
-        let wt = createWishTable(epUids, sort);
+        // 将新的表格uid添加到队列中
+        this.uidList.push(tableUid);
 
-        // 将表格信息更新到lc上
-        this.updateTable(wt.uid, wt);
+        // 更新到lc中
+        return this.set(this.key, this.uidList);
     }
 
     // 删除某个表格
     delTable(uid) {
-        return this.remove(uid);
+        this.uidList.splice(this.uidList.indexOf(uid), 1);
+        this.remove(uid);
+
+        return this.set(this.key, this.uidList);
     }
 
     clearAll() {

@@ -1,18 +1,18 @@
 <template>
     <div class="table-container">
         <div class="table-title">
-            <div>{{ title }}</div>
+            <div>{{ wt.name }}</div>
+            <ep-show-table :equipments="normalizedEps"
+                      @click-event="wishComeTrue"/>
             <div class="table-btns">
                 <v-btn text="添加装备"
                        class="table-btns_single"
-                      :disabled="equipments.length >= limit"
+                      :disabled="normalizedEps.length >= wt.limit"
                       @btn-click="selectEquip"/>
                 <v-btn text="删除该表"
                        class="table-btns_single"
                       @btn-click="delTable"/>
             </div>
-            <ep-table :equipments="equipments"
-                      @click-event="wishComeTrue(equipment)"/>
         </div>
         <polo-hr/>
     </div>
@@ -36,56 +36,116 @@
 
             .table-btns_single
                 height 20px
+                min-width 80px
                 line-height 20px
 
                 &:first-of-type
                     margin-bottom 3px
 
+    @media screen and (max-width 1024px)
+        .table-title
+            display flex
+            flex-direction column
+            align-items center
+            justify-content space-between
+            padding 10px 20px
+            color #70B991
+
+            .table-btns
+                display flex
+                flex-direction row
+                justify-content center
+                margin-top 10px
+
+                .table-btns_single
+                    height 20px
+                    min-width 80px
+                    line-height 20px
+
+                    &:first-of-type
+                        margin-right 3px
 </style>
 
 <script>
 import EpShowTable from '../common-ep-show-table/index'
+import AddForm from '../add-form/index'
 
 export default {
     name: 'SingleTable',
 
     props: {
-        title: {
-            type: String,
-            default: '无'
+        wt: {
+            type: Object
         },
-
-        tableUid: {
-            type: Number,
-            required: true
-        },
-
-        limit: {
-            type: Number,
-            default: 5
+        index: {
+            type: Number
         }
     },
 
     components: {
-        EpShowTable
-    },
-
-    data () {
-        return {
-            equipments: [{ selected: true}, { selected: false}]
-        };
+        EpShowTable,
+        AddForm
     },
 
     methods: {
-        wishComeTrue(equipment) {
-            equipment.selected = !equipment.selected;
-
-            // 等待加入localStorage操作
+        wishComeTrue(ep) {
+            this.$emit('wish-come-true', ep, this.wt);
         },
 
-        selectEquip(){},
+        selectEquip(){
+            this.$modal({
+                component: AddForm,
+                width: '70vw',
+                height: '80vh',
+                props: {
+                    remoteSuits: this.$parent.remoteSuits,
+                    sort: this.wt.sort,
+                    selectedSchames: [this.wt.raw.tableSchema],
+                    inner: true
+                },
+                title: '继续添加装备',
+                events: {
+                    hideTable: schema => {
 
-        delTable(){}
+                        let ep = null,
+                            wtSchema = this.wt.schema;
+
+                        // 遍历添加出来的装备，找到添加了装备的几个部位
+                        for (let part in schema) {
+                            ep = schema[part];
+
+                            // 当添加不同部位或相同不为不同装备时，更新
+                            if (ep && (!wtSchema[part] || wtSchema[part].uid !== ep.uid)) {
+                                ep.selected = false;
+                                this.wt.addEquipment(ep, true);
+                            }
+                        }
+                    }
+                }
+            });
+        },
+
+        delTable(){
+            this.wt.removeTable();
+            this.$emit('del-table', this.index);
+        }
+    },
+
+    computed: {
+
+        normalizedEps () {
+            let schema = this.wt.schema,
+                eps = [];
+
+            for (let part in schema) {
+
+                if (schema[part]) {
+                    eps.push(schema[part]);
+                }
+            }
+
+            return eps;
+        }
     }
 }
 </script>

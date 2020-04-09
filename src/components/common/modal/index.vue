@@ -34,6 +34,9 @@
 import MaskWrapper from '../mask/index';
 import { normalizeSize } from './util/index';
 
+// 传递元数据，不改变它
+let closePayload = void 0;
+
 export default {
     name: 'Dialog',
     props: {
@@ -98,6 +101,12 @@ export default {
         ]);
     },
 
+    created () {
+
+        // 用户想在弹窗关闭时的回调调用中获得的数据
+        this.$on('close', payload => (closePayload = payload))
+    },
+
     computed: {
         dialogContentStyle () {
             return {
@@ -109,7 +118,7 @@ export default {
 
     methods: {
         slideTable () {
-            this.$emit('hide-table');
+            this.$emit('hide-table', closePayload);
         }
     }
 }

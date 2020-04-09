@@ -13,7 +13,7 @@
         <equipment-img
             v-for="equipment in normalEps"
             class="table_equipments-eq"
-           :key="equipment.key"
+           :key="equipment.uid"
            :selected="equipment.selected"
            :src="equipment.uid + '.png'"
            @wish-come-true="$emit('click-event', equipment)"/>
