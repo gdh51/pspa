@@ -17,14 +17,14 @@ app.use(history({
 }));
 
 // 开放静态资源
-app.use(express.static(path.join(__dirname, './static')), cached);
+app.use(express.static(path.join(__dirname, './static'), cached));
 
-// // 先允许跨域
-// app.all('*', function (req, res, next) {
-//     res.header(cors);
-//     next();
-// });
+// 先允许跨域
+app.all('*', function (req, res, next) {
+    res.header(cors);
+    next();
+});
 
 initRouter(app);
 
-app.listen(3000, () => console.log('success listen at port:3000......'));
+app.listen(80, () => console.log('success listen at port:80......'));

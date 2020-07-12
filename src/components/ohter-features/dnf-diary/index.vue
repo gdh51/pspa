@@ -20,7 +20,6 @@
 </style>
 
 <script>
-import Diary from './components/index'
 import MythColor from './components/myth-color/index'
 
 export default {
@@ -41,12 +40,15 @@ export default {
             if (modal) {
                 return modal.$show();
             }
-            this.singleton = this.$modal({
-                component: Diary,
-                width: '90vw',
-                height: '80vh',
-                title: '深渊记录表！',
-                hideEvent: () => this.singleton.$hide()
+
+            import('./components/index').then((Diary) => {
+                this.singleton = this.$modal({
+                    component: Diary.default,
+                    width: '90vw',
+                    height: '80vh',
+                    title: '深渊记录表！',
+                    hideEvent: () => this.singleton.$hide()
+                });
             });
         }
     }

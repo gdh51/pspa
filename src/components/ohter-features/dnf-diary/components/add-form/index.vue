@@ -79,40 +79,59 @@ export default {
         },
 
         createSuits (suits, selectedSchames) {
-            let initSuits = suits
-                .filter(suit => !this.sort || (suit.sort === this.sort))
-                .map((suit, index) => {
+
+            // 首先过滤出同种类型的所有套装
+            let initSuitMap = {};
+
+            suits
+
+                // 如果添加新的套装，则提供全部套装进行选择
+                // 如果添加或更换装备，则过滤掉不同套装类型的装备，仅提供相同套装类型装备进行添加
+                .filter((suit, index) => {
+                    suit.uid = index;
+
+                    return !this.sort || (suit.sort === this.sort);
+                })
+                .map(suit => {
+
+                    // 复制当前装备的原始数据进行初始化
                     let result = deepClone(suit);
                     result.eps.forEach(ep => {
                         ep.selected = false;
-                        ep.suit = index;
+
+                        // 记录装备对于的套装id
+                        ep.suit = suit.uid;
                     });
-                    return result;
+
+                    // 将数组形式的套装表按suit id -> suit的形式生成对象，方便查找
+                    initSuitMap[suit.uid] = result;
                 });
 
             // 处理初始化表格前就已选中的某些装备
             selectedSchames && selectedSchames.forEach(schema => {
                 let ep = null;
+
+                // 遍历装备槽，在刚刚初始化的表格中点亮装备槽中已有装备
                 for(let part in schema) {
 
                     // 被选中的对应部位
                     ep = schema[part];
 
-                    // 已勾选过的装备，则点亮
+                    // 是否装备槽中某个部位的装备已存在
                     if (ep) {
 
                         // 之前选中的添加至表中
                         this.schema[part] = ep;
 
                         // 将对应套装的对应部位点亮
-                        initSuits[ep.suit].eps.forEach(iEp => {
+                        initSuitMap[ep.suit].eps.forEach(iEp => {
                             iEp.part === ep.part && iEp.myth === ep.myth && (iEp.selected = true);
                         });
                     }
                 }
             });
 
-            return initSuits;
+            return Object.keys(initSuitMap).map(suitId => initSuitMap[suitId]);
         }
     }
 }

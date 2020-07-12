@@ -5,9 +5,8 @@
             <ep-show-table :equipments="normalizedEps"
                       @click-event="wishComeTrue"/>
             <div class="table-btns">
-                <v-btn text="添加装备"
+                <v-btn text="添加/替换装备"
                        class="table-btns_single"
-                      :disabled="normalizedEps.length >= wt.limit"
                       @btn-click="selectEquip"/>
                 <v-btn text="删除该表"
                        class="table-btns_single"
@@ -106,7 +105,6 @@ export default {
                 title: '继续添加装备',
                 events: {
                     hideTable: schema => {
-
                         let ep = null,
                             wtSchema = this.wt.schema;
 

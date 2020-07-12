@@ -9,7 +9,8 @@ module.exports.get = function () {
                     "sort": 3,
                     "part": "shoulder",
                     "uid": 0
-                }, {
+                },
+                {
                     "name": "大祭司的星祈腰带",
                     "sort": 3,
                     "part": "belt",
@@ -50,7 +51,8 @@ module.exports.get = function () {
                     "sort": 3,
                     "part": "shoulder",
                     "uid": 6
-                }, {
+                },
+                {
                     "name": "热情舞动桑巴",
                     "sort": 3,
                     "part": "belt",
@@ -91,7 +93,8 @@ module.exports.get = function () {
                     "sort": 3,
                     "part": "shoulder",
                     "uid": 12
-                }, {
+                },
+                {
                     "name": "魔法师[???]的腰带",
                     "sort": 3,
                     "part": "belt",
@@ -132,7 +135,8 @@ module.exports.get = function () {
                     "sort": 3,
                     "part": "shoulder",
                     "uid": 18
-                }, {
+                },
+                {
                     "name": "首席执行官裁决腰带",
                     "sort": 3,
                     "part": "belt",
@@ -173,7 +177,8 @@ module.exports.get = function () {
                     "sort": 3,
                     "part": "shoulder",
                     "uid": 24
-                }, {
+                },
+                {
                     "name": "浴血奋战腰带",
                     "sort": 3,
                     "part": "belt",
@@ -214,7 +219,8 @@ module.exports.get = function () {
                     "sort": 3,
                     "part": "shoulder",
                     "uid": 30
-                }, {
+                },
+                {
                     "name": "死亡阴影腰带",
                     "sort": 3,
                     "part": "belt",
@@ -255,7 +261,8 @@ module.exports.get = function () {
                     "sort": 3,
                     "part": "shoulder",
                     "uid": 36
-                }, {
+                },
+                {
                     "name": "风起云涌腰带",
                     "sort": 3,
                     "part": "belt",
@@ -296,7 +303,8 @@ module.exports.get = function () {
                     "sort": 3,
                     "part": "shoulder",
                     "uid": 42
-                }, {
+                },
+                {
                     "name": "守护战士之苦难",
                     "sort": 3,
                     "part": "belt",
@@ -337,7 +345,8 @@ module.exports.get = function () {
                     "sort": 3,
                     "part": "shoulder",
                     "uid": 48
-                }, {
+                },
+                {
                     "name": "炙炎:山竹",
                     "sort": 3,
                     "part": "belt",
@@ -378,7 +387,8 @@ module.exports.get = function () {
                     "sort": 3,
                     "part": "shoulder",
                     "uid": 54
-                }, {
+                },
+                {
                     "name": "碎钢之牙",
                     "sort": 3,
                     "part": "belt",
@@ -419,7 +429,8 @@ module.exports.get = function () {
                     "sort": 3,
                     "part": "shoulder",
                     "uid": 60
-                }, {
+                },
+                {
                     "name": "千链锁灵腰带",
                     "sort": 3,
                     "part": "belt",
@@ -460,7 +471,8 @@ module.exports.get = function () {
                     "sort": 3,
                     "part": "shoulder",
                     "uid": 66
-                }, {
+                },
+                {
                     "name": "亚巴顿:绝望地狱",
                     "sort": 3,
                     "part": "belt",
@@ -497,11 +509,12 @@ module.exports.get = function () {
             "name": "大自然的呼吸",
             "sort": "Dress",
             "eps": [{
-                    "name": "猛烈燃烧之炎	",
+                    "name": "猛烈燃烧之炎",
                     "sort": 3,
                     "part": "shoulder",
                     "uid": 72
-                }, {
+                },
+                {
                     "name": "宁静苍翠之水",
                     "sort": 3,
                     "part": "belt",
@@ -542,7 +555,8 @@ module.exports.get = function () {
                     "sort": 3,
                     "part": "shoulder",
                     "uid": 78
-                }, {
+                },
+                {
                     "name": "奔流不息之狂风",
                     "sort": 3,
                     "part": "belt",
@@ -583,7 +597,8 @@ module.exports.get = function () {
                     "sort": 3,
                     "part": "shoulder",
                     "uid": 84
-                }, {
+                },
+                {
                     "name": "正义的抉择",
                     "sort": 3,
                     "part": "belt",
@@ -618,27 +633,28 @@ module.exports.get = function () {
         },
         {
             "name": "地狱求道者",
-            "sort": "Mixin",
+            "sort": "Mixin_1",
             "eps": [{
                     "name": "堕入地狱之脚",
-                    "sort": 3,
-                    "part": "shoulder",
+                    "sort": 4,
+                    "part": "shoes",
                     "uid": 90
-                }, {
+                },
+                {
                     "name": "支配黑暗之环",
-                    "sort": 2,
+                    "sort": 4,
                     "part": "ring",
                     "uid": 91
                 },
                 {
                     "name": "无尽地狱黑暗之印",
-                    "sort": 1,
+                    "sort": 4,
                     "part": "earrings",
                     "uid": 92
                 },
                 {
                     "name": "永恒地狱黑暗之印",
-                    "sort": 1,
+                    "sort": 4,
                     "part": "earrings",
                     "uid": 93,
                     "myth": true
@@ -647,28 +663,29 @@ module.exports.get = function () {
         },
         {
             "name": "深渊窥视者",
-            "sort": "Mixin",
+            "sort": "Mixin_3",
             "eps": [{
                     "name": "堕落深渊黑魔法衬衫",
-                    "sort": 3,
+                    "sort": 6,
                     "part": "coat",
                     "uid": 94
-                }, {
+                },
+                {
                     "name": "深渊囚禁者长袍",
-                    "sort": 3,
+                    "sort": 6,
                     "part": "coat",
                     "uid": 95,
                     "myth": true
                 },
                 {
                     "name": "堕落世界树之生命",
-                    "sort": 2,
+                    "sort": 6,
                     "part": "necklace",
                     "uid": 96
                 },
                 {
                     "name": "暗黑术士亲笔古书",
-                    "sort": 1,
+                    "sort": 6,
                     "part": "auxiliary",
                     "uid": 97
                 }
@@ -676,28 +693,29 @@ module.exports.get = function () {
         },
         {
             "name": "黑魔法探求者",
-            "sort": "Mixin",
+            "sort": "Mixin_2",
             "eps": [{
                     "name": "驱散黑暗短裤",
-                    "sort": 3,
+                    "sort": 5,
                     "part": "pants",
                     "uid": 98
-                }, {
+                },
+                {
                     "name": "执着的探求",
-                    "sort": 2,
+                    "sort": 5,
                     "part": "bracelet",
                     "uid": 99
                 },
                 {
                     "name": "无尽的探求",
-                    "sort": 2,
+                    "sort": 5,
                     "part": "bracelet",
                     "uid": 100,
                     "myth": true
                 },
                 {
                     "name": "暗黑术士的精髓",
-                    "sort": 1,
+                    "sort": 5,
                     "part": "miscarcand",
                     "uid": 101
                 }
@@ -705,28 +723,29 @@ module.exports.get = function () {
         },
         {
             "name": "圣者的黄昏",
-            "sort": "Mixin",
+            "sort": "Mixin_3",
             "eps": [{
                     "name": "引路者的黄昏披风",
-                    "sort": 3,
+                    "sort": 6,
                     "part": "coat",
                     "uid": 102
-                }, {
+                },
+                {
                     "name": "圣者的黄昏披风",
-                    "sort": 3,
+                    "sort": 6,
                     "part": "coat",
                     "uid": 103,
                     "myth": true
                 },
                 {
                     "name": "引路者的四季项链",
-                    "sort": 2,
+                    "sort": 6,
                     "part": "necklace",
                     "uid": 104
                 },
                 {
                     "name": "引路者的旅行书",
-                    "sort": 1,
+                    "sort": 6,
                     "part": "auxiliary",
                     "uid": 105
                 }
@@ -734,28 +753,29 @@ module.exports.get = function () {
         },
         {
             "name": "坎坷命运",
-            "sort": "Mixin",
+            "sort": "Mixin_3",
             "eps": [{
                     "name": "地狱边缘",
-                    "sort": 3,
+                    "sort": 6,
                     "part": "coat",
                     "uid": 106
-                }, {
+                },
+                {
                     "name": "逆转结局",
-                    "sort": 3,
+                    "sort": 6,
                     "part": "coat",
                     "uid": 107,
                     "myth": true
                 },
                 {
                     "name": "悲情者遗物",
-                    "sort": 1,
+                    "sort": 6,
                     "part": "auxiliary",
                     "uid": 108
                 },
                 {
                     "name": "悲痛者项链",
-                    "sort": 2,
+                    "sort": 6,
                     "part": "necklace",
                     "uid": 109
                 }
@@ -763,28 +783,29 @@ module.exports.get = function () {
         },
         {
             "name": "穿透命运的呐喊",
-            "sort": "Mixin",
+            "sort": "Mixin_2",
             "eps": [{
-                    "name": "灵魂的呐喊	",
-                    "sort": 3,
+                    "name": "灵魂的呐喊",
+                    "sort": 5,
                     "part": "pants",
                     "uid": 110
-                }, {
+                },
+                {
                     "name": "支配战场的呐喊",
-                    "sort": 2,
-                    "part": "necklace",
+                    "sort": 5,
+                    "part": "bracelet",
                     "uid": 111
                 },
                 {
                     "name": "响彻天地的咆哮",
-                    "sort": 2,
-                    "part": "necklace",
+                    "sort": 5,
+                    "part": "bracelet",
                     "uid": 112,
                     "myth": true
                 },
                 {
                     "name": "寂寞的呼喊",
-                    "sort": 1,
+                    "sort": 5,
                     "part": "miscarcand",
                     "uid": 113
                 }
@@ -792,27 +813,28 @@ module.exports.get = function () {
         },
         {
             "name": "天命无常",
-            "sort": "Mixin",
+            "sort": "Mixin_1",
             "eps": [{
                     "name": "悲喜交加",
-                    "sort": 3,
+                    "sort": 4,
                     "part": "shoes",
                     "uid": 114
-                }, {
+                },
+                {
                     "name": "命运的捉弄",
-                    "sort": 2,
+                    "sort": 4,
                     "part": "ring",
                     "uid": 115
                 },
                 {
                     "name": "命运挑战者",
-                    "sort": 1,
+                    "sort": 4,
                     "part": "earrings",
                     "uid": 116
                 },
                 {
                     "name": "命运反抗者",
-                    "sort": 1,
+                    "sort": 4,
                     "part": "earrings",
                     "uid": 117,
                     "myth": true
@@ -821,28 +843,29 @@ module.exports.get = function () {
         },
         {
             "name": "吞噬愤怒",
-            "sort": "Mixin",
+            "sort": "Mixin_3",
             "eps": [{
                     "name": "泣血之恨",
-                    "sort": 3,
+                    "sort": 6,
                     "part": "coat",
                     "uid": 118
-                }, {
+                },
+                {
                     "name": "灭世之怒",
-                    "sort": 3,
+                    "sort": 6,
                     "part": "coat",
                     "uid": 119,
                     "myth": true
                 },
                 {
                     "name": "激狂之怒",
-                    "sort": 2,
+                    "sort": 6,
                     "part": "necklace",
                     "uid": 120
                 },
                 {
                     "name": "失控之怒",
-                    "sort": 1,
+                    "sort": 6,
                     "part": "auxiliary",
                     "uid": 121
                 }
@@ -850,28 +873,29 @@ module.exports.get = function () {
         },
         {
             "name": "狂乱追随者者",
-            "sort": "Mixin",
+            "sort": "Mixin_2",
             "eps": [{
                     "name": "疯狂之如影随形",
-                    "sort": 3,
+                    "sort": 5,
                     "part": "pants",
                     "uid": 122
-                }, {
+                },
+                {
                     "name": "狂乱之坚如磐石",
-                    "sort": 2,
+                    "sort": 5,
                     "part": "bracelet",
                     "uid": 123
                 },
                 {
                     "name": "狂乱之逆转宿命",
-                    "sort": 2,
+                    "sort": 5,
                     "part": "bracelet",
                     "uid": 124,
                     "myth": true
                 },
                 {
                     "name": "狂乱之天灾降临",
-                    "sort": 1,
+                    "sort": 5,
                     "part": "miscarcand",
                     "uid": 125
                 }
@@ -879,27 +903,28 @@ module.exports.get = function () {
         },
         {
             "name": "悲剧的残骸",
-            "sort": "Mixin",
+            "sort": "Mixin_1",
             "eps": [{
                     "name": "崩溃世界的忧伤",
-                    "sort": 3,
+                    "sort": 4,
                     "part": "shoes",
                     "uid": 126
-                }, {
+                },
+                {
                     "name": "蓬勃生命的落幕",
-                    "sort": 2,
+                    "sort": 4,
                     "part": "ring",
                     "uid": 127
                 },
                 {
                     "name": "悲剧人生的归寂",
-                    "sort": 1,
+                    "sort": 4,
                     "part": "earrings",
                     "uid": 128
                 },
                 {
                     "name": "心痛如绞的诀别",
-                    "sort": 1,
+                    "sort": 4,
                     "part": "earrings",
                     "uid": 129,
                     "myth": true
@@ -908,28 +933,29 @@ module.exports.get = function () {
         },
         {
             "name": "时空旅行者",
-            "sort": "Mixin",
+            "sort": "Mixin_2",
             "eps": [{
                     "name": "时空漩涡护腿",
-                    "sort": 3,
+                    "sort": 5,
                     "part": "pants",
                     "uid": 130
-                }, {
+                },
+                {
                     "name": "时间指引之针",
-                    "sort": 2,
+                    "sort": 5,
                     "part": "bracelet",
                     "uid": 131
                 },
                 {
                     "name": "时间回溯之针",
-                    "sort": 2,
+                    "sort": 5,
                     "part": "bracelet",
                     "uid": 132,
                     "myth": true
                 },
                 {
                     "name": "被困的时之沙",
-                    "sort": 1,
+                    "sort": 5,
                     "part": "miscarcand",
                     "uid": 133
                 }
@@ -937,27 +963,28 @@ module.exports.get = function () {
         },
         {
             "name": "次元旅行者",
-            "sort": "Mixin",
+            "sort": "Mixin_1",
             "eps": [{
                     "name": "次元漫步者长靴",
-                    "sort": 3,
+                    "sort": 4,
                     "part": "shoes",
                     "uid": 134
-                }, {
+                },
+                {
                     "name": "次元穿越者之印",
-                    "sort": 2,
+                    "sort": 4,
                     "part": "ring",
                     "uid": 135
                 },
                 {
                     "name": "次元流星坠",
-                    "sort": 1,
+                    "sort": 4,
                     "part": "earrings",
                     "uid": 136
                 },
                 {
                     "name": "次元穿越者之星",
-                    "sort": 1,
+                    "sort": 4,
                     "part": "earrings",
                     "uid": 137,
                     "myth": true
@@ -972,7 +999,8 @@ module.exports.get = function () {
                     "sort": 2,
                     "part": "necklace",
                     "uid": 138
-                }, {
+                },
+                {
                     "name": "莱多:变幻的规律",
                     "sort": 2,
                     "part": "bracelet",
@@ -1001,7 +1029,8 @@ module.exports.get = function () {
                     "sort": 2,
                     "part": "necklace",
                     "uid": 142
-                }, {
+                },
+                {
                     "name": "拥抱晨曦之温暖",
                     "sort": 2,
                     "part": "bracelet",
@@ -1030,7 +1059,8 @@ module.exports.get = function () {
                     "sort": 2,
                     "part": "necklace",
                     "uid": 146
-                }, {
+                },
+                {
                     "name": "火魔之焰-沙罗曼达",
                     "sort": 2,
                     "part": "bracelet",
@@ -1050,7 +1080,8 @@ module.exports.get = function () {
                     "uid": 149
                 }
             ]
-        }, {
+        },
+        {
             "name": "幸运三角",
             "sort": "Jewelry",
             "eps": [{
@@ -1058,7 +1089,8 @@ module.exports.get = function () {
                     "sort": 2,
                     "part": "necklace",
                     "uid": 150
-                }, {
+                },
+                {
                     "name": "白象之庇护",
                     "sort": 2,
                     "part": "bracelet",
@@ -1087,7 +1119,8 @@ module.exports.get = function () {
                     "sort": 1,
                     "part": "auxiliary",
                     "uid": 154
-                }, {
+                },
+                {
                     "name": "白象军神的庇护宝石",
                     "sort": 1,
                     "part": "miscarcand",
@@ -1116,7 +1149,8 @@ module.exports.get = function () {
                     "sort": 1,
                     "part": "auxiliary",
                     "uid": 158
-                }, {
+                },
+                {
                     "name": "智慧之地",
                     "sort": 1,
                     "part": "miscarcand",
@@ -1145,7 +1179,8 @@ module.exports.get = function () {
                     "sort": 1,
                     "part": "auxiliary",
                     "uid": 162
-                }, {
+                },
+                {
                     "name": "时之漩涡",
                     "sort": 1,
                     "part": "miscarcand",
@@ -1168,12 +1203,14 @@ module.exports.get = function () {
         },
         {
             "name": "能量主宰",
+            "sort": "Auxiliary",
             "eps": [{
                     "name": "能量回流控制者",
                     "sort": 1,
                     "part": "auxiliary",
                     "uid": 166
-                }, {
+                },
+                {
                     "name": "电光能量支配者",
                     "sort": 1,
                     "part": "miscarcand",

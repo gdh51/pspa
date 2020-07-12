@@ -1,7 +1,6 @@
 import {
     SORT,
     SortToName,
-    EquipmentNumber,
     Schema
 }
 from './constants'
@@ -19,11 +18,12 @@ import {
     delUid
 } from './uid'
 
-// 输出一种模型方案
+// 输出一种或全部装备(当从0开始添加装备时则输出全部)槽模型方案
 export function outputSchema(name) {
     return name ? extend({}, Schema[name]) : deepClone(Schema);
 }
 
+// 获取当前装备槽模版的某部分是否已存在装备
 export function hasSchemaPart(ep, schema, inner) {
     let partKey = ep.myth ? 'myth' : ep.part,
         sort = typeof ep.sort === 'number' ? SORT[ep.sort] : sort;
@@ -60,9 +60,6 @@ function WishTable({
 
     // 当前表格的中文名称
     this.name = SortToName[this.sort];
-
-    // 装备数量限制
-    this.limit = EquipmentNumber[this.sort];
 
     // 当前表格的uid
     this.uid = uid;

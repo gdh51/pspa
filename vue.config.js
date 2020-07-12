@@ -20,5 +20,6 @@ module.exports = {
     },
 
     // eslint验错
-    lintOnSave: true
+    lintOnSave: true,
+    outputDir: path.join(__dirname, './app/static')
 }

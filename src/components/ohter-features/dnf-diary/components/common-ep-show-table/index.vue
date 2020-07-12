@@ -1,15 +1,19 @@
 <template>
     <div class="table_equipments"
-         v-if="normalEps.length">
-         <template v-if="myth">
+         v-if="equipments.length">
+
+        <!-- 神话装备展示槽 -->
+        <template v-if="myth">
             <div class="table_equipments-eq-myth">
                 <equipment-img
                     class="table_equipments-eq"
                    :selected="myth.selected"
-                   :src="myth.uid + '.png'"
+                   :src="myth.uid + '.gif'"
                    @wish-come-true="$emit('click-event', myth)"/>
             </div>
         </template>
+
+        <!-- 普通装备展示槽 -->
         <equipment-img
             v-for="equipment in normalEps"
             class="table_equipments-eq"

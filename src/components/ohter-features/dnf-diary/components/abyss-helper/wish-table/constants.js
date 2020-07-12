@@ -1,9 +1,12 @@
+// 套装类型
 export const SORT = [
     'Weapon',
     'Auxiliary',
     'Jewelry',
     'Dress',
-    'Mixin'
+    'Mixin_1',
+    'Mixin_2',
+    'Mixin_3'
 ];
 
 export const SortToName = {
@@ -13,13 +16,10 @@ export const SortToName = {
     Dress: '左侧装备区域'
 };
 
-// 具体表格对应的装备数量限制
-export const EquipmentNumber = {
-    Weapon: 5,
-    Auxiliary: 3,
-    Jewelry: 3,
-    Dress: 5
-};
+// 混搭区域
+const Mixin = ['Mixin_1', 'Mixin_2', 'Mixin_3'];
+
+Mixin.forEach(name => (SortToName[name] = '三件套区域'))
 
 // 表格能容纳的装备模型
 export const Schema = {
@@ -48,6 +48,24 @@ export const Schema = {
 
     Weapon: {
         none: false
+    },
+
+    Mixin_1: {
+        shoes: false,
+        ring: false,
+        earrings: false
+    },
+
+    Mixin_2: {
+        pants: false,
+        bracelet: false,
+        miscarcand: false
+    },
+
+    Mixin_3: {
+        coat: false,
+        necklace: false,
+        auxiliary: false
     }
 };
 

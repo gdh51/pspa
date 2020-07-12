@@ -10,7 +10,7 @@ const epsController = {
         }
 
         readFile('../../database/ep-data/index.json', 'utf-8', (err, file) => {
-            res.json(file);
+            res.end(file);
         });
     }
 };
