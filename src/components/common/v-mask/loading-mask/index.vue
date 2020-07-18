@@ -1,5 +1,5 @@
 <template>
-    <mask-wrapper :visible="visible">
+    <v-mask :visible="visible">
         <div class="loading">
             <div class="rect1"></div>
             <div class="rect2"></div>
@@ -7,18 +7,14 @@
             <div class="rect4"></div>
             <div class="rect5"></div>
         </div>
-    </mask-wrapper>
+    </v-mask>
 </template>
 
 <script>
-import MaskWrapper from '../index.vue'
 
 // 加载时的全局遮布
 export default {
     name: 'LoadingMask',
-    components: {
-        MaskWrapper
-    },
 
     props: {
         visible: {

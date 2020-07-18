@@ -1,5 +1,5 @@
 <template>
-    <div class="mask"
+    <div class="v-mask"
          v-show="visible"
          :style="{ zIndex }"
          >
@@ -12,7 +12,7 @@ import { getZIndex, resetZIndex } from './util/index'
 
 // 加载时的全局遮布
 export default {
-    name: 'MaskWrapper',
+    name: 'VMask',
     props: {
         visible: {
             type: Boolean,
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.mask
+.v-mask
     position fixed
     display table
     top 0

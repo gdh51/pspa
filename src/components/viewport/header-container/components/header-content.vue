@@ -9,22 +9,22 @@
               v-if="!isInArticle">
             <a href="https://github.com/gdh51"
                class='links-icon'
-            ><icon icon="github"/></a>
+            ><v-icon icon="github"/></a>
             <a href=""
                class='links-icon'
-            ><icon icon="weibo"/></a>
+            ><v-icon icon="weibo"/></a>
             <a href=""
                class='links-icon'
-            ><icon icon="twitter"/></a>
+            ><v-icon icon="twitter"/></a>
             <a href=""
                class='links-icon'
-            ><icon icon="steam"/></a>
+            ><v-icon icon="steam"/></a>
             <a href=""
                class='links-icon'
-            ><icon icon="qq"/></a>
+            ><v-icon icon="qq"/></a>
             <a href=""
                class='links-icon'
-            ><icon icon="search"/></a>
+            ><v-icon icon="search"/></a>
         </span>
     </address>
 </template>

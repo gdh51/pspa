@@ -5,13 +5,13 @@
         <span class='nav-left'>
             <router-link class='blog-name' to='/' >Lazybones</router-link>
         </span>
-        <icon class="nav-right"
+        <v-icon class="nav-right"
               icon="phone-menu"
              @click.stop='toggleMenu'/>
         <span class='nav-right pc-menu'
               ref='menu'>
             <a class='nav-page'>
-                <icon icon="search"/>
+                <v-icon icon="search"/>
                 <span> Search</span>
             </a>
             <router-link

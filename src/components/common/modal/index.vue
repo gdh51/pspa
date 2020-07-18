@@ -31,7 +31,6 @@
 </style>
 
 <script>
-import MaskWrapper from '../mask/index';
 import { normalizeSize } from './util/index';
 
 // 传递元数据，不改变它
@@ -89,7 +88,7 @@ export default {
             style: this.dialogContentStyle
         }, this.$slots.default));
 
-        return h('MaskWrapper', {
+        return h('v-mask', {
             props: {
                 visible: this.visible
             }
@@ -102,6 +101,9 @@ export default {
     },
 
     created () {
+
+        // 清空上次获取的数据
+        closePayload = void 0;
 
         // 用户想在弹窗关闭时的回调调用中获得的数据
         this.$on('close', payload => (closePayload = payload))

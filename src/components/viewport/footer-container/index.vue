@@ -5,12 +5,12 @@
             <div>visited</div>
             <div class='count'>
                 <span>
-                    <icon icon="viewicon"/>
+                    <v-icon icon="viewicon"/>
                     <span class='viewcount'>{{ view }}</span>
                 </span>
             </div>
         </address>
-        <icon icon="top-arrow"
+        <v-icon icon="top-arrow"
              @click="scrollToTop"/>
     </footer>
 </template>

@@ -7,13 +7,13 @@
             <time class='ar-date'>{{ item.time }}</time>
             <span class='ar-meta'>
                 <span class='ar-meta-separator'>｜</span>
-                <icon icon="file"/>
+                <v-icon icon="file"/>
                 <router-link
                     class='ar-meta-categories'
                     :to="'tags/' + item.tags[0].title"
                 >{{ item.tags[0].title }}</router-link>
                 <span class='angle'> > </span>
-                <icon icon="file"/>
+                <v-icon icon="file"/>
                 <router-link
                     :to="{ name: 'articles', query: { title: item.title } }"
                     class='ar-meta-categories'
@@ -25,7 +25,7 @@
                     v-for='(category) in item.categories'
                     :key='category.title'
                 >
-                    <icon icon="links"/>
+                    <v-icon icon="links"/>
                     <router-link
                         class='ar-meta-tags'
                         :to="'tags/' + category.title"

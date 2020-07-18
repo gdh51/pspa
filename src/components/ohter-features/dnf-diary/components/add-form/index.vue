@@ -1,10 +1,16 @@
 <template>
     <div class="add_form-container">
-        <suit-table v-for="suit in suits"
+        <v-icon icon="search"
+                class="add_form-search"
+                @click="showSearchTable"/>
+        <suit-table v-for="suit in showSuits"
                    :key="suit.name"
                    :suit-eps="suit"
                     class="add_form-suit"
                    @select-ep="addEp"/>
+        <v-mask :visible="isShowSearchTable">
+            <v-input v-model="searchKey"/>
+        </v-mask>
     </div>
 </template>
 
@@ -16,6 +22,16 @@
 
     .add_form-suit
         margin 10px
+
+    >>>.add_form-search
+        position absolute
+        top 18px
+        right 64px
+        cursor pointer
+        transition all .3s
+
+        &:hover
+            color #fede4b
 </style>
 
 <script>
@@ -32,7 +48,9 @@ export default {
     data () {
         return {
             suits: [],
-            schema: outputSchema(this.sort)
+            schema: outputSchema(this.sort),
+            searchKey: '',
+            isShowSearchTable: false
         };
     },
 
@@ -52,6 +70,14 @@ export default {
 
             this.suits = this.createSuits(suits, this.selectedSchames);
         });
+    },
+
+    computed: {
+
+        // 用于展示的套装
+        showSuits () {
+            return this.suits.map(suit => suit.name.indexOf(searchKey !== -1));
+        }
     },
 
     methods: {
@@ -132,6 +158,10 @@ export default {
             });
 
             return Object.keys(initSuitMap).map(suitId => initSuitMap[suitId]);
+        },
+
+        showSearchTable () {
+            this.isShowSearchTable = true;
         }
     }
 }

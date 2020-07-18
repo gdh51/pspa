@@ -5,7 +5,7 @@
         <content-container/>
         <!-- 内容容器 -->
         <footer-container v-bind="$attrs"></footer-container>
-        <icon :class="iconClass"
+        <v-icon :class="iconClass"
               @click="toggleShrink"
                icon="toggle-sidebar"/>
         <dnf-abyss/>
