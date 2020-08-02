@@ -160,9 +160,9 @@ export default {
             return Object.keys(initSuitMap).map(suitId => initSuitMap[suitId]);
         },
 
-        showSearchTable () {
+        showSearchTable() {
             this.isShowSearchTable = true;
         }
     }
-}
+};
 </script>

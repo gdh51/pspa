@@ -13,7 +13,7 @@
                       @btn-click="delTable"/>
             </div>
         </div>
-        <polo-hr/>
+        <polo-hr />
     </div>
 </template>
 
@@ -66,8 +66,8 @@
 </style>
 
 <script>
-import EpShowTable from '../common-ep-show-table/index'
-import AddForm from '../add-form/index'
+import EpShowTable from '../common-ep-show-table/index';
+import AddForm from '../add-form/index';
 
 export default {
     name: 'SingleTable',
@@ -82,8 +82,7 @@ export default {
     },
 
     components: {
-        EpShowTable,
-        AddForm
+        EpShowTable
     },
 
     methods: {
@@ -91,7 +90,7 @@ export default {
             this.$emit('wish-come-true', ep, this.wt);
         },
 
-        selectEquip(){
+        selectEquip() {
             this.$modal({
                 component: AddForm,
                 width: '70vw',
@@ -123,20 +122,18 @@ export default {
             });
         },
 
-        delTable(){
+        delTable() {
             this.wt.removeTable();
             this.$emit('del-table', this.index);
         }
     },
 
     computed: {
-
-        normalizedEps () {
+        normalizedEps() {
             let schema = this.wt.schema,
                 eps = [];
 
             for (let part in schema) {
-
                 if (schema[part]) {
                     eps.push(schema[part]);
                 }
@@ -145,5 +142,5 @@ export default {
             return eps;
         }
     }
-}
+};
 </script>

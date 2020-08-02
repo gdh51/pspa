@@ -62,10 +62,6 @@ export default {
         }
     },
 
-    components: {
-        MaskWrapper
-    },
-
     render(h) {
         let children = [h('div', {
             staticClass: 'home',

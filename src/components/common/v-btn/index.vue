@@ -1,5 +1,5 @@
 <template>
-    <button class="v-btn"
+    <button class="v-btn" 
            :disabled="$attrs.disabled"
            @click="$emit('btn-click')">
         {{ text }}
@@ -48,5 +48,5 @@ export default {
     data () {
         return {};
     }
-}
+};
 </script>

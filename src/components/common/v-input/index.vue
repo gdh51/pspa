@@ -105,33 +105,33 @@ export default {
     },
 
     methods: {
-        handleInput (event) {
+        handleInput(event) {
             this.$emit('input', event.target.value);
         },
 
-        handleChange (event) {
+        handleChange(event) {
             this.$emit('change', event.target.value);
         },
 
-        handleFocus (event) {
+        handleFocus(event) {
             this.isFocusing = true;
             this.$emit('focus', event);
         },
 
-        handleBlur (event) {
+        handleBlur(event) {
             this.isFocusing = false;
             this.$emit('blur', event);
         },
 
-        handleCompositionStart (event) {
+        handleCompositionStart() {
             this.isComposing = true;
         },
 
-        handleCompositionUpdate (event) {
+        handleCompositionUpdate() {
             this.isComposing = true;
         },
 
-        handleCompositionEnd (event) {
+        handleCompositionEnd(event) {
             if (this.isComposing) {
                 this.isComposing = false;
 
@@ -145,7 +145,7 @@ export default {
         },
 
         // 控制后置区域是否显示，只要后置区域某个功能上线，则显示
-        getSuffixVisible () {
+        getSuffixVisible() {
             return this.showClear;
         }
     }
