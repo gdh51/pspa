@@ -256,7 +256,6 @@ body {
     flex-direction: column;
     font-size: 14px;
     line-height: 2;
-    transition: all 0.5s linear;
 }
 
 h1,

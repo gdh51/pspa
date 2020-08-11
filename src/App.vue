@@ -1,6 +1,5 @@
 <template>
     <div id="app">
-        <back-canvas></back-canvas>
         <main-layout :shrink="isShrink">
             <!-- 左边侧边栏 -->
             <template v-slot:aside>
@@ -20,7 +19,6 @@
 import MainLayout from './layout/index'
 import leftSide from './components/left_side/index.vue'
 import Viewport from './components/index'
-import backCanvas from './components/back_canvas.vue';
 import { mapState } from 'vuex'
 
 export default {
@@ -28,7 +26,6 @@ export default {
 
     components: {
         leftSide,
-        backCanvas,
         MainLayout,
         Viewport
     },
